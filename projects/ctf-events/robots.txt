@@ -1,6 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://ctf-events.abidiahmed.com/sitemap.xml
-
-
