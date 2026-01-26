@@ -1,0 +1,548 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#2563EB" />
+  <link rel="canonical" href="https://abidiahmed.com/projects/ctf-events/privacy" />
+  <title>CTF Events — Privacy Policy</title>
+  <meta name="description"
+    content="CTF Events is privacy‑friendly: no accounts, minimal data, optional ads you can remove with a one‑time premium. Read our privacy policy." />
+  <meta name="application-name" content="CTF Events" />
+  <meta name="apple-mobile-web-app-title" content="CTF Events" />
+  <meta property="og:title" content="CTF Events — Privacy Policy" />
+  <meta property="og:description"
+    content="Privacy‑friendly by design. No accounts. Minimal data. Optional ads removable with a one‑time premium." />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="CTF Events" />
+  <meta property="og:url" content="./privacy" />
+  <meta property="og:image" content="/splash.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:alt" content="CTF Events app preview" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="/splash.jpg" />
+  <meta name="twitter:image:alt" content="CTF Events app preview" />
+  <meta name="twitter:title" content="CTF Events — Privacy Policy" />
+  <meta name="twitter:description"
+    content="Privacy‑friendly by design. No accounts. Minimal data. Optional ads removable with a one‑time premium." />
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="57x57" href="../../assets/favicons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="../../assets/favicons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="../../assets/favicons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="../../assets/favicons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="../../assets/favicons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="../../assets/favicons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="../../assets/favicons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="../../assets/favicons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../assets/favicons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="../../assets/favicons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="../../assets/favicons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../assets/favicons/favicon-16x16.png">
+  <link rel="manifest" href="../../assets/favicons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="../../assets/favicons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:locale" content="en_US" />
+
+  <style>
+    /* Design tokens (aligned with index.html) */
+    :root {
+      color-scheme: light dark;
+      --primary-600: #5E35B1;
+      --primary-700: #4A2C8F;
+      --secondary: #03DAC6;
+      --accent: #FF4081;
+      --bg: #F5F5F5;
+      --surface: #FFFFFF;
+      --green: #4CAF50;
+      --yellow: #FFC107;
+      --orange: #F59E0B;
+      --red: #B00020;
+      --text-primary: #212121;
+      --text-secondary: #757575;
+      --text-tertiary: #9E9E9E;
+      --border: #E0E0E0;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+      --radius-lg: 20px;
+      --nav-height: 64px;
+      --header-offset: 12px;
+    }
+
+    :root[data-theme="dark"] {
+      --bg: #181818;
+      --surface: #1E1E1E;
+      --text-primary: #E0E0E0;
+      --text-secondary: #BDBDBD;
+      --text-tertiary: #9E9E9E;
+      --border: #424242;
+    }
+
+    /* Base */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text-primary);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .muted {
+      color: var(--text-secondary);
+    }
+
+    /* Header (matches index) */
+    header {
+      position: sticky;
+      top: var(--header-offset);
+      z-index: 50;
+      background: transparent;
+      border-bottom: 0;
+      padding: 4px 0;
+    }
+
+    .nav {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      height: var(--nav-height);
+      background: color-mix(in srgb, var(--surface) 92%, transparent);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      backdrop-filter: saturate(180%) blur(10px);
+      padding: 0 14px;
+      transition: height .25s ease, box-shadow .2s ease, background-color .2s ease, transform .2s ease;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: -.3px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .brand img {
+      width: 28px;
+      height: 28px;
+      border-radius: 7px;
+      transition: width .2s ease, height .2s ease;
+    }
+
+    .nav>.brand {
+      grid-column: 1;
+      justify-self: start;
+    }
+
+    .nav>nav {
+      grid-column: 2;
+      justify-self: center;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .nav>.nav-actions {
+      grid-column: 3;
+      justify-self: end;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Shrink on scroll */
+    header.is-scrolled {
+      --nav-height: 56px;
+    }
+
+    header.is-scrolled .nav {
+      box-shadow: 0 6px 18px rgba(15, 23, 42, .10);
+    }
+
+    header.is-scrolled .brand img {
+      width: 24px;
+      height: 24px;
+    }
+
+    /* Theme toggle */
+    .theme-toggle {
+      width: 40px;
+      height: 40px;
+      display: inline-grid;
+      place-items: center;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text-primary);
+      cursor: pointer;
+      position: relative;
+    }
+
+    .theme-toggle:hover {
+      background: color-mix(in srgb, var(--surface) 90%, var(--bg));
+    }
+
+    .theme-toggle:focus-visible {
+      outline: 2px solid var(--primary-600);
+      outline-offset: 2px;
+    }
+
+    .theme-toggle .icon {
+      position: absolute;
+      width: 22px;
+      height: 22px;
+      transition: transform .35s ease, opacity .35s ease;
+    }
+
+    .theme-toggle .icon.sun {
+      opacity: 1;
+      transform: rotate(0deg) scale(1);
+    }
+
+    .theme-toggle .icon.moon {
+      opacity: 0;
+      transform: rotate(90deg) scale(0.6);
+    }
+
+    :root[data-theme="dark"] .theme-toggle .icon.sun {
+      opacity: 0;
+      transform: rotate(-90deg) scale(0.6);
+    }
+
+    :root[data-theme="dark"] .theme-toggle .icon.moon {
+      opacity: 1;
+      transform: rotate(0deg) scale(1);
+    }
+
+    /* Page hero */
+    .page-hero {
+      background: linear-gradient(180deg, var(--bg), var(--surface));
+      padding: 72px 0 24px;
+    }
+
+    .page-hero h1 {
+      font-size: clamp(32px, 5.5vw, 44px);
+      line-height: 1.1;
+      letter-spacing: -0.6px;
+      margin: 0 0 10px;
+      font-weight: 800;
+    }
+
+    .page-hero p {
+      margin: 0;
+      color: var(--text-secondary);
+      font-size: clamp(16px, 2.5vw, 18px);
+    }
+
+    /* Content */
+    section {
+      padding: 32px 0;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .prose {
+      line-height: 1.7;
+      color: var(--text-primary);
+    }
+
+    .prose h2 {
+      font-size: 20px;
+      margin: 18px 0 8px;
+    }
+
+    .prose p {
+      margin: 10px 0;
+      color: var(--text-secondary);
+    }
+
+    .prose ul {
+      margin: 8px 0 12px;
+      padding-left: 18px;
+      color: var(--text-secondary);
+    }
+
+    .prose li {
+      margin: 6px 0;
+    }
+
+    .kbd {
+      background: color-mix(in srgb, var(--surface) 85%, var(--bg));
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 0 6px;
+      font-size: 12px;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 36px 0;
+    }
+
+    .foot {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .legal {
+      font-size: 12px;
+      color: var(--text-secondary);
+    }
+
+    .links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      margin-right: 14px;
+      font-size: 13px;
+    }
+
+    .links a:hover {
+      color: var(--primary-700);
+    }
+
+    /* Simple reveal */
+    @media (prefers-reduced-motion: no-preference) {
+      .reveal {
+        opacity: 0;
+        transform: translateY(10px);
+        transition: opacity .45s ease, transform .45s ease;
+      }
+
+      .reveal.is-visible {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 960px) {
+      .foot {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="/" aria-label="CTF Events home">
+        <img src="imgs/logo/logo.png" alt="" aria-hidden="true" width="28" height="28" />
+        <span>CTF Events</span>
+      </a>
+      <!-- Navigation intentionally empty on the privacy page -->
+      <nav id="primary-navigation" aria-label="Primary"></nav>
+      <div class="nav-actions">
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme" aria-pressed="false"
+          title="Toggle dark/light">
+          <svg class="icon sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path
+              d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41">
+            </path>
+          </svg>
+          <svg class="icon moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1 class="reveal">Privacy Policy</h1>
+        <p class="muted reveal" style="margin-top:8px">Last updated: September 2025</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="card reveal">
+          <div class="prose">
+            <p>CTF Events is built to be privacy‑friendly. We don’t require accounts, and we keep data collection to the
+              minimum necessary to provide the app and support optional ads.</p>
+
+            <h2>What we collect</h2>
+            <ul>
+              <li><strong>App usage (on‑device)</strong>: Basic interactions used to render features like bookmarks and
+                reminders. This data stays on your device.</li>
+              <li><strong>Event data</strong>: We fetch public event information from third‑party sources such as <a
+                  href="https://ctftime.org/api/" target="_blank" rel="noopener noreferrer">CTFtime API</a>. We don’t
+                track which specific events you view.</li>
+              <li><strong>Advertising identifiers</strong>: If you use the free version, the ad network may access an
+                advertising identifier (e.g., AAID/IDFA) to display and measure ads. You can remove ads with a one‑time
+                premium purchase.</li>
+            </ul>
+
+            <h2>How we use data</h2>
+            <ul>
+              <li><strong>Provide core features</strong>: Search, filters, bookmarks, reminders, and calendar
+                integration.</li>
+              <li><strong>Show optional ads</strong>: In the free version, we show minimal ads. Ads can be removed
+                permanently with a one‑time premium purchase.</li>
+            </ul>
+
+            <h2>Third‑party services</h2>
+            <ul>
+              <li><strong>CTFtime</strong>: Event listings and details come from the public CTFtime API. See their
+                policy and terms on their website.</li>
+              <li><strong>Ad network</strong>: The free version may use a mobile ad SDK (e.g., Google AdMob) to deliver
+                ads and measure performance. The ad provider may process device and advertising identifiers per their
+                policies. Upgrading to premium disables ads and associated ad SDK requests.</li>
+              <li><strong>App stores</strong>: Purchases and billing are handled by Google Play and the App Store. We
+                never receive your full payment details.</li>
+            </ul>
+
+            <h2>Purchases</h2>
+            <p>Premium is a one‑time purchase to remove ads. Transactions are processed by your platform’s store and
+              tied to your store account for restore eligibility.</p>
+
+            <h2>Notifications and calendar</h2>
+            <ul>
+              <li><strong>Notifications</strong>: If you enable reminders, the app schedules device notifications. You
+                can change this anytime in system settings.</li>
+              <li><strong>Calendar</strong>: When you add an event to your calendar, the details you approve are saved
+                in your device calendar app.</li>
+            </ul>
+
+            <h2>Data retention</h2>
+            <p>Most app data (like bookmarks) is stored locally on your device. We don’t maintain personal user profiles
+              or cloud accounts.</p>
+
+            <h2>Your choices</h2>
+            <ul>
+              <li>Use the premium option to remove ads.</li>
+              <li>Adjust notification permissions in your device settings.</li>
+              <li>Clear the app’s local data via your device settings if you want to reset.</li>
+            </ul>
+
+            <h2>Children’s privacy</h2>
+            <p>The app is not directed to children under 13. If you believe a child provided us information, contact us
+              and we’ll address it.</p>
+
+            <h2>Changes</h2>
+            <p>We may update this policy as features evolve. We’ll revise the “Last updated” date above and, when
+              appropriate, highlight changes in‑app.</p>
+
+            <h2>Contact</h2>
+            <p>If you have questions, email <a href="mailto:me@abidiahmed.com">me@abidiahmed.com</a>.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container foot">
+      <a class="brand" href="/" style="justify-content:center;" aria-label="CTF Events home">
+        <img src="imgs/logo/logo.png" alt="" aria-hidden="true" width="24" height="24" />
+        <span>CTF Events</span>
+      </a>
+      <div class="links" style="text-align:center;">
+        <a href="./privacy" aria-current="page">Privacy</a>
+        <a href="/terms">Terms</a>
+        <a href="mailto:me@abidiahmed.com">Contact</a>
+      </div>
+      <div class="legal" style="grid-column: 1/-1; text-align:center; margin-top: 8px;">
+        <div>© <span id="y"></span> CTF Events. All rights reserved.</div>
+        <div style="margin-top:6px;">Disclaimer: Event details may change. Always confirm on official pages before
+          registering.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Theme: respect system preference, allow toggle, persist selection
+    (function () {
+      var root = document.documentElement;
+      var stored = localStorage.getItem('theme');
+      if (stored === 'dark' || stored === 'light') {
+        root.setAttribute('data-theme', stored);
+      } else {
+        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (prefersDark) root.setAttribute('data-theme', 'dark');
+      }
+    })();
+
+    (function () {
+      // Year
+      var y = document.getElementById('y'); if (y) y.textContent = new Date().getFullYear();
+
+      // Theme toggle behavior
+      var themeToggle = document.getElementById('themeToggle');
+      var root = document.documentElement;
+      function applyTheme(theme) {
+        root.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+      }
+      function syncPressed() {
+        var isDark = root.getAttribute('data-theme') === 'dark';
+        if (themeToggle) themeToggle.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+      }
+      if (themeToggle) {
+        themeToggle.addEventListener('click', function () {
+          var current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+          var next = current === 'dark' ? 'light' : 'dark';
+          applyTheme(next);
+          syncPressed();
+        });
+        syncPressed();
+      }
+
+      // Reveal on scroll (lightweight)
+      var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!prefersReduced && 'IntersectionObserver' in window) {
+        var obs = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-visible'); obs.unobserve(e.target); } });
+        }, { rootMargin: '0px 0px -10% 0px', threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(function (el) { obs.observe(el); });
+      } else {
+        document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('is-visible'); });
+      }
+
+      // Shrink header on scroll
+      var headerEl = document.querySelector('header');
+      function onScroll() {
+        var sy = window.scrollY || window.pageYOffset;
+        if (!headerEl) return;
+        if (sy > 10) headerEl.classList.add('is-scrolled');
+        else headerEl.classList.remove('is-scrolled');
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+  </script>
+</body>
+
+</html>

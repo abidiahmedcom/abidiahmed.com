@@ -1,0 +1,21 @@
+# Enable mod_rewrite
+RewriteEngine On
+
+# Ensure the base is the current directory
+RewriteBase /
+
+# Serve existing files/directories directly
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Redirect legacy .html pages to clean URLs (SEO 301)
+RewriteCond %{THE_REQUEST} \s/+(privacy|terms)\.html\s [NC]
+RewriteRule ^ %1 [R=301,L]
+
+# Map clean paths to actual files
+RewriteRule ^privacy/?$ privacy.html [L]
+RewriteRule ^terms/?$ terms.html [L]
+
+# Default document for root
+DirectoryIndex index.html

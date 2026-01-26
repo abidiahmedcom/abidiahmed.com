@@ -1,0 +1,3927 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Expert Full Stack Developer in Tunisia offering high-performance Web & Mobile App Development (Flutter, React, PHP). Freelance solutions for your business.">
+    <title>Ahmed - Full Stack Developer | Web & Mobile Apps</title>
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Ahmed - Web and APP Developer">
+    <meta property="og:description" content="Ahmed - Web and APP Developer delivering exceptional web solutions with 2+ years of experience">
+    <meta property="og:image" content="https://abidiahmed.com/assets/images/abidi-ahmed.png">
+    <meta property="og:url" content="https://abidiahmed.com">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ahmed - Web and APP Developer">
+    <meta name="twitter:description" content="Ahmed - Web and APP Developer delivering exceptional web solutions with 2+ years of experience">
+    <meta name="twitter:image" content="https://abidiahmed.com/assets/images/abidi-ahmed.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://abidiahmed.com">
+
+    <!-- Preload Critical Fonts -->
+    <link rel="preload" href="assets/fonts/Montserrat-VariableFont_wght.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="assets/fonts/TitanOne-Regular.ttf" as="font" type="font/ttf" crossorigin>
+
+    <!-- Defer Main Script -->
+    <script src="script.min.js" defer></script>
+
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "name": "Ahmed Abidi",
+          "jobTitle": "Web and App Developer",
+          "url": "https://abidiahmed.com",
+          "image": "https://abidiahmed.com/assets/images/abidi-ahmed.png",
+          "sameAs": [
+            "https://github.com/abidiahmedcom",
+            "https://www.linkedin.com/in/abidiahmedcom",
+            "https://www.upwork.com/freelancers/~01e261e981175af1ae"
+          ],
+          "description": "I craft pixel-perfect web solutions that bring your ideas to life. With a sharp eye for detail and a commitment to quality, I deliver clean, high-performance code every time."
+        },
+        {
+          "@type": "WebSite",
+          "url": "https://abidiahmed.com",
+          "name": "Ahmed - Web and APP Developer",
+          "description": "Portfolio of Ahmed, a Web and APP Developer delivering exceptional web solutions.",
+          "author": {
+            "@type": "Person",
+            "name": "Ahmed Abidi"
+          }
+        },
+        {
+          "@type": "ProfessionalService",
+          "name": "Ahmed Developer Services",
+          "url": "https://abidiahmed.com",
+          "priceRange": "$$",
+          "description": "Professional Web and Mobile App Development Services",
+          "address": {
+             "@type": "PostalAddress",
+             "addressCountry": "Tunisia"
+          },
+          "telephone": "+21627065061"
+        }
+      ]
+    }
+    </script>
+    <style>
+@font-face {
+    font-family: 'Montserrat';
+    src: url('assets/fonts/Montserrat-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('assets/fonts/Montserrat-Italic-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Titan One';
+    src: url('assets/fonts/TitanOne-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Colors */
+    --color-bg-light: #ececec;
+    --color-bg-dark: #2d2d2d;
+    --color-bg-darker: #1a1a1a;
+    --color-accent: #e8762e;
+    --color-accent-hover: #f5893f;
+    --color-text-dark: #1a1a1a;
+    --color-text-light: #ffffff;
+    --color-text-muted: #b8b8b8;
+    --color-border: #555555;
+    --color-peach: #fad4c4;
+    --color-gray-dark: #5a5a5a;
+    --color-gray-light: #f5f5f5;
+
+    /* Typography */
+    --font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+    /* Spacing */
+    --navbar-height: 70px;
+    --container-padding: 24px;
+
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-medium: 0.3s ease;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    color: var(--color-text-dark);
+    line-height: 1.6;
+    background: var(--color-bg-light);
+    overflow-x: hidden;
+}
+
+.navbar {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 48px);
+    max-width: 900px;
+    background: var(--color-bg-dark);
+    border-radius: 50px;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.nav-hidden {
+    transform: translateX(-50%) translateY(-150%);
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px;
+    height: var(--navbar-height);
+}
+
+/* Logo Styles */
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+.logo-bracket {
+    color: var(--color-accent);
+    font-weight: 700;
+}
+
+.logo-text {
+    color: var(--color-accent);
+    font-weight: 700;
+}
+
+.logo-name {
+    color: var(--color-text-light);
+    margin-left: 8px;
+}
+
+/* Navigation Menu */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 8px;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-link {
+    display: block;
+    padding: 8px 16px;
+    color: var(--color-text-muted);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    position: relative;
+    transition: color var(--transition-fast);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: var(--color-accent);
+    border-radius: 2px;
+    transition: width var(--transition-fast);
+}
+
+.nav-link:hover {
+    color: var(--color-text-light);
+}
+
+.nav-link:hover::after {
+    width: calc(100% - 32px);
+}
+
+.nav-link.active {
+    color: var(--color-text-light);
+}
+
+.nav-link.active::after {
+    width: calc(100% - 32px);
+}
+
+/* CTA Button */
+.nav-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 24px;
+    background: var(--color-text-light);
+    color: var(--color-bg-dark);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    border: 2px solid var(--color-border);
+    border-radius: 50px;
+    transition: all var(--transition-fast);
+}
+
+.nav-cta:hover {
+    border-color: var(--color-text-light);
+}
+
+/* Mobile Menu Toggle Button */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    position: relative;
+    z-index: 1001;
+}
+
+.hamburger {
+    position: relative;
+    width: 28px;
+    height: 2px;
+    background: var(--color-text-light);
+    border-radius: 2px;
+    transition: all var(--transition-medium);
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    width: 28px;
+    height: 2px;
+    background: var(--color-text-light);
+    border-radius: 2px;
+    transition: all var(--transition-medium);
+    left: 0;
+}
+
+.hamburger::before {
+    top: -8px;
+}
+
+.hamburger::after {
+    top: 8px;
+}
+
+/* Hamburger Animation - Active State */
+.nav-toggle.active .hamburger {
+    background: transparent;
+}
+
+.nav-toggle.active .hamburger::before {
+    top: 0;
+    transform: rotate(45deg);
+}
+
+.nav-toggle.active .hamburger::after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+/* Mobile Drawer Overlay */
+.drawer-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition-medium), visibility var(--transition-medium);
+    z-index: 998;
+}
+
+.drawer-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 24px 60px;
+    position: relative;
+}
+
+.hero-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Hero Heading */
+.hero-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.hero-heading h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--color-text-dark);
+    margin-bottom: 8px;
+    letter-spacing: -0.02em;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.hero-heading h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--color-text-dark);
+    letter-spacing: -0.01em;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.hero-heading .highlight-name {
+    color: #f27a34;
+}
+
+/* Technology Icons */
+.tech-icons {
+    position: relative;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.tech-icon {
+    position: absolute;
+    transition: transform 0.3s ease;
+}
+
+.tech-icon:hover {
+    transform: scale(1.1);
+}
+
+.tech-icon-js {
+    width: 80px;
+    height: 80px;
+    top: -100px;
+    left: 10%;
+}
+
+.tech-icon-html {
+    width: 60px;
+    height: 60px;
+    top: -100px;
+    right: 25%;
+}
+
+.tech-icon-python {
+    width: 70px;
+    height: 70px;
+    top: 20px;
+    right: 10%;
+}
+
+.tech-icon-flutter {
+    width: 60px;
+    height: 60px;
+    top: 120px;
+    left: 15%;
+}
+
+/* Profile Section */
+.profile-section {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+/* Profile Left - Description & Button */
+.profile-left {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: flex-start;
+}
+
+.profile-description {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--color-text-dark);
+    max-width: 280px;
+}
+
+.cta-button {
+    padding: 14px 60px;
+    background: var(--color-accent);
+    color: var(--color-text-light);
+    border: none;
+    border-radius: 8px;
+    font-size: .8rem;
+    font-weight: 600;
+    font-family: var(--font-family);
+    cursor: pointer;
+    width: 180px;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 12px rgba(232, 118, 46, 0.3);
+}
+
+.cta-button:hover {
+    background: var(--color-accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(232, 118, 46, 0.4);
+}
+
+.cta-button:active {
+    transform: translateY(0);
+}
+
+/* Profile Image */
+.profile-image-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-circle {
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Profile Stats */
+.profile-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: flex-end;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    line-height: 1;
+    margin-bottom: 4px;
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: var(--color-text-dark);
+    max-width: 140px;
+}
+
+/* Hero Divider */
+.hero-divider {
+    margin-top: -100px;
+    margin-bottom: -80px;
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    z-index: 10;
+}
+
+.divider-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Tech Marquee */
+.tech-marquee {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%) rotate(2deg);
+    overflow: hidden;
+    white-space: nowrap;
+    mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+    z-index: 2;
+}
+
+.tech-track {
+    display: inline-flex;
+    gap: 32px;
+    animation: marquee 40s linear infinite;
+    /* padding: 10px 0; */
+}
+
+.tech-track:hover {
+    animation-play-state: paused;
+}
+
+.tech-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-bg-light);
+    padding: 8px 16px;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.tech-item:hover {
+    transform: translateY(-3px);
+}
+
+.tech-item i {
+    font-size: 1.4rem;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.about {
+    background: linear-gradient(135deg, #fde4d8 0%, #fad4c4 100%);
+    padding: 110px 24px 80px;
+    margin-top: -80px;
+    position: relative;
+    overflow: hidden;
+    margin-top: -12px;
+}
+
+/* Dotted Pattern Background */
+.about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 300px;
+    background-image: radial-gradient(circle, #e8762e 2px, transparent 2px);
+    background-size: 20px 20px;
+    opacity: 0.2;
+    pointer-events: none;
+}
+
+.about::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 250px;
+    height: 250px;
+    background-image: radial-gradient(circle, #e8762e 2px, transparent 2px);
+    background-size: 20px 20px;
+    opacity: 0.2;
+    pointer-events: none;
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Section Label */
+.section-label {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.875rem;
+    color: var(--color-text-dark);
+    font-weight: 500;
+    padding-bottom: 8px;
+}
+
+.section-label::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 2px;
+    background: var(--color-text-dark);
+}
+
+/* About Content Layout */
+.about-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* About Text Section */
+.about-text {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+    text-align: center;
+    max-width: 800px;
+    width: 100%;
+}
+
+.about-heading {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-text-dark);
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.about-heading-deco {
+    flex-shrink: 0;
+}
+
+.about-description {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: var(--color-text-dark);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* About Buttons */
+.about-buttons {
+    display: flex;
+    gap: 16px;
+    margin-top: 16px;
+    justify-content: center;
+}
+
+.about-btn {
+    padding: 14px 40px;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: var(--font-family);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.about-btn-primary {
+    background: var(--color-accent);
+    color: var(--color-text-light);
+    border: 2px solid var(--color-accent);
+    box-shadow: 0 4px 12px rgba(232, 118, 46, 0.3);
+}
+
+.about-btn-primary:hover {
+    background: var(--color-accent-hover);
+    border-color: var(--color-accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(232, 118, 46, 0.4);
+}
+
+.about-btn-secondary {
+    background: transparent;
+    color: var(--color-text-dark);
+    border: 2px solid var(--color-text-dark);
+}
+
+.about-btn-secondary:hover {
+    background: var(--color-text-dark);
+    color: var(--color-text-light);
+    transform: translateY(-2px);
+}
+
+
+.projects {
+    background: #ffffff;
+    padding: 120px 24px 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Dotted Pattern Background */
+.projects::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80px;
+    height: 120px;
+    background-image: radial-gradient(circle, #e8762e 2px, transparent 2px);
+    background-size: 20px 20px;
+    opacity: 0.25;
+    pointer-events: none;
+}
+
+.projects::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80px;
+    height: 120px;
+    background-image: radial-gradient(circle, #e8762e 2px, transparent 2px);
+    background-size: 20px 20px;
+    opacity: 0.25;
+    pointer-events: none;
+    transform: rotate(180deg);
+}
+
+.projects-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Projects Header */
+.projects-header {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+.projects-title-wrapper {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    max-width: 800px;
+    position: relative;
+    margin-top: 40px;
+}
+
+.projects-heading {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-text-dark);
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: -0.01em;
+}
+
+.projects-crown {
+    position: absolute;
+    right: 10px;
+    top: -20px;
+    transform: rotate(20deg);
+    transition: transform 0.3s ease;
+}
+
+.projects-crown:hover {
+    transform: rotate(30deg) scale(1.1);
+}
+
+.projects-highlight {
+    color: var(--color-accent);
+}
+
+.projects-arrow {
+    margin-top: -8px;
+}
+
+.projects-subtitle {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--color-text-dark);
+    max-width: 600px;
+    font-weight: 600;
+}
+
+/* Decorative Lightning Bolts */
+.projects-deco {
+    flex-shrink: 0;
+    width: 60px;
+    height: auto;
+}
+
+.projects-deco-left {
+    margin-top: -10px;
+    margin-right: 160px;
+    transform: rotate(20deg);
+}
+
+.projects-deco-right {
+    margin-top: 50px;
+    margin-left: 160px;
+    transform: rotate(-50deg);
+}
+
+/* Projects Grid (placeholder) */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+    justify-items: center;
+}
+
+.article-wrapper {
+    width: 100%;
+    max-width: 280px;
+    -webkit-transition: 0.15s all ease-in-out;
+    transition: 0.15s all ease-in-out;
+    border-radius: 10px;
+    padding: 5px;
+    border: 4px solid transparent;
+    cursor: pointer;
+    background-color: white;
+}
+
+.article-wrapper:hover {
+    -webkit-box-shadow: 10px 10px 0 #ff9a56, 20px 20px 0 #e8762e;
+    box-shadow: 10px 10px 0 #ff9a56, 20px 20px 0 #e8762e;
+    border-color: #e8762e;
+    -webkit-transform: translate(-20px, -20px);
+    -ms-transform: translate(-20px, -20px);
+    transform: translate(-20px, -20px);
+}
+
+.article-wrapper:active {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    transform: translate(0, 0);
+}
+
+.types {
+    gap: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    place-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.rounded-lg {
+    border-radius: 10px;
+}
+
+.article-wrapper:hover .project-hover {
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    background-color: #ffd4b8;
+}
+
+.project-info {
+    padding-top: 20px;
+    padding: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.project-title {
+    font-size: 1.5em;
+    margin: 0;
+    font-weight: 600;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: black;
+}
+
+.flex-pr {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.project-type {
+    background: #b2b2fd;
+    color: #1a41cd;
+    font-weight: bold;
+    padding: 0.3em 0.7em;
+    border-radius: 15px;
+    font-size: 12px;
+    letter-spacing: -0.6px;
+}
+
+.project-hover {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    padding: 9px;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.container-project {
+    width: 100%;
+    height: 170px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background-size: cover;
+    background-position: center;
+}
+
+/* Projects View All Button */
+.projects-button-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.projects-view-all-btn {
+    padding: 14px 40px;
+    background: transparent;
+    color: var(--color-text-dark);
+    border: 2px solid var(--color-text-dark);
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: var(--font-family);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.projects-view-all-btn:hover {
+    background: var(--color-text-dark);
+    color: var(--color-text-light);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+
+
+.client-projects-wrapper {
+    margin-top: 80px;
+    margin-bottom: 40px;
+}
+
+.client-projects-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.client-heading {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--color-text-dark, #333);
+}
+
+.client-highlight {
+    color: var(--color-accent, #e8762e);
+}
+
+.client-subtitle {
+    font-size: 1rem;
+    color: var(--color-text-muted, #666);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.client-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.client-card {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 20px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+}
+
+.client-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(232, 118, 46, 0.15);
+    border-color: var(--color-accent, #e8762e);
+}
+
+.client-card-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 10px;
+}
+
+.client-url {
+    font-weight: 600;
+    color: var(--color-text-dark, #333);
+    font-size: 0.95rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.client-card:hover .client-url {
+    color: var(--color-accent, #e8762e);
+}
+
+.client-icon {
+    color: #ccc;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.client-card:hover .client-icon {
+    color: var(--color-accent, #e8762e);
+    transform: translateX(3px);
+}
+
+
+
+@media screen and (max-width: 1024px) {
+    .hero-heading h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-heading h2 {
+        font-size: 1.25rem;
+    }
+
+    .profile-section {
+        gap: 40px;
+    }
+
+    .profile-circle {
+        width: 320px;
+        height: 320px;
+    }
+
+    .profile-image-wrapper {
+        transform: translateY(50px);
+    }
+
+    .tech-icon-js {
+        width: 70px;
+        height: 70px;
+    }
+
+    .tech-icon-html {
+        width: 50px;
+        height: 50px;
+    }
+
+    .tech-icon-python {
+        width: 60px;
+        height: 60px;
+    }
+
+    .tech-icon-flutter {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Projects Section Tablet */
+    .projects-header {
+        gap: 30px;
+    }
+
+    .projects-heading {
+        font-size: 2.2rem;
+    }
+
+    .projects-deco-left,
+    .projects-deco-right {
+        width: 50px;
+        height: 80px;
+    }
+
+    .hero-divider {
+        margin-top: 0px;
+    }
+
+    .tech-icon-flutter {
+        top: -10px;
+        left: 240px;
+    }
+
+    .tech-icon-html {
+        right: 100px;
+        
+    }
+}
+
+/* Mobile View */
+@media screen and (max-width: 768px) {
+    /* Show mobile toggle button */
+    .nav-toggle {
+        display: flex;
+    }
+
+    /* Navbar adjustments */
+    .navbar {
+        width: calc(100% - 32px);
+        top: 16px;
+    }
+
+    .nav-container {
+        padding: 0 20px;
+    }
+
+    /* Mobile Drawer Menu - Full Screen */
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: var(--color-bg-dark);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 80px 40px;
+        gap: 0;
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s;
+        z-index: 999;
+        overflow-y: auto;
+    }
+
+    .nav-menu.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* Mobile Navigation List */
+    .nav-list {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        width: 100%;
+        margin-bottom: 40px;
+    }
+
+    .nav-item {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    /* Mobile Navigation Links */
+    .nav-link {
+        padding: 16px 24px;
+        font-size: 1.2rem;
+        font-weight: 500;
+        color: var(--color-text-muted);
+        display: block;
+        text-align: center;
+        transition: color var(--transition-fast);
+    }
+
+    .nav-link::before,
+    .nav-link::after {
+        display: none;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+        color: var(--color-text-light);
+    }
+
+    /* Mobile CTA Button */
+    .nav-cta {
+        width: 100%;
+        max-width: 300px;
+        padding: 16px 32px;
+        font-size: 1rem;
+        font-weight: 500;
+        background: var(--color-text-light);
+        color: var(--color-bg-dark);
+        border: 2px solid var(--color-border);
+        transition: border-color var(--transition-fast);
+    }
+
+    .nav-cta:hover {
+        border-color: var(--color-text-light);
+    }
+
+    /* Hero Section Mobile */
+    .hero {
+        padding: 90px 20px 40px;
+    }
+
+    .hero-heading h1 {
+        font-size: 2rem;
+    }
+
+    .hero-heading h2 {
+        font-size: 1rem;
+    }
+
+    .profile-section {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .profile-left {
+        align-items: center;
+        order: 3;
+        margin-bottom: 40px;
+        width: 100%; /* Ensure container is wide enough */
+    }
+
+    .cta-button {
+        width: 85%;
+        max-width: 320px;
+        background: #ffffff;
+        color: var(--color-text-dark);
+        border: 2px solid var(--color-accent);
+        box-shadow: 6px 6px 0 var(--color-accent);
+        border-radius: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        font-weight: 700;
+        font-family: inherit;
+        padding: 16px 0;
+        margin-top: 10px;
+    }
+    
+    .cta-button:active {
+        transform: rotate(-6deg) translate(2px, 2px);
+        box-shadow: 4px 4px 0 var(--color-accent);
+    }
+
+    .profile-description {
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .profile-image-wrapper {
+        order: 1;
+        transform: translateY(5px);
+    }
+
+    .profile-circle {
+        width: 280px;
+        height: 280px;
+    }
+
+    .profile-stats {
+        order: 2;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 24px;
+    }
+
+    .stat-item {
+        align-items: center;
+        text-align: center;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    .stat-label {
+        font-size: 0.8rem;
+    }
+
+    /* Tech Icons - Adjust for mobile */
+    .tech-icon-js {
+        width: 50px;
+        height: 50px;
+        top: -20px;
+        left: 5%;
+    }
+
+    .tech-icon-html {
+        width: 40px;
+        height: 40px;
+        top: 10px;
+        right: 10%;
+    }
+
+    .tech-icon-python {
+        width: 45px;
+        height: 45px;
+        top: -100px;
+        right: 5%;
+    }
+
+    .tech-icon-flutter {
+        width: 40px;
+        height: 40px;
+        top: 60px;
+        left: 10%;
+    }
+
+    /* Divider - Overlap both sections */
+    .hero-divider {
+        margin-top: 0;
+        margin-bottom: -60px;
+        z-index: 10;
+        overflow: hidden; /* Ensure no horizontal scroll */
+        gap: 20px;
+    }
+
+    .divider-image {
+        width: 280%;
+        max-width: none;
+    }
+
+    .tech-track {
+        gap: 10px;
+    }
+
+    /* About Section Mobile */
+    .about {
+        padding: 100px 20px 60px;
+    }
+
+    .section-label {
+        top: -30px;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .about-image-circle {
+        width: 280px;
+        height: 280px;
+    }
+
+    .about-deco-1 {
+        top: 5%;
+        left: 2%;
+        width: 30px;
+        height: 45px;
+    }
+
+    .about-deco-2 {
+        bottom: 10%;
+        left: -2%;
+        width: 30px;
+        height: 45px;
+    }
+
+    .about-arrow {
+        display: none;
+    }
+
+    .about-text {
+        text-align: center;
+    }
+
+    .about-heading {
+        font-size: 2rem;
+        justify-content: center;
+    }
+
+    .about-description {
+        font-size: 0.9rem;
+        max-width: 100%;
+    }
+
+    .about-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-btn {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    /* Projects Section Mobile */
+    .projects {
+        padding: 100px 20px 60px;
+    }
+
+    .projects-header {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        margin-bottom: 0;
+    }
+
+    .projects-deco-left,
+    .projects-deco-right {
+        display: block;
+        width: 60px;
+        height: auto;
+    }
+
+    .projects-deco-right{
+     margin-top: 0;   
+    }
+    
+    .projects-heading {
+        font-size: 2rem;
+    }
+
+    .projects-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .projects-arrow {
+        width: 80px;
+        height: 30px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+/* Small Mobile */
+@media screen and (max-width: 480px) {
+    .hero-heading h1 {
+        font-size: 1.75rem;
+    }
+
+    .hero-heading h2 {
+        font-size: 0.9rem;
+    }
+
+    .profile-circle {
+        width: 240px;
+        height: 240px;
+    }
+
+    .stat-number {
+        font-size: 1.75rem;
+    }
+}
+
+/* Tablet and smaller desktop adjustments */
+@media screen and (min-width: 769px) and (max-width: 900px) {
+    .nav-container {
+        padding: 0 24px;
+    }
+
+    .nav-menu {
+        gap: 20px;
+    }
+
+    .nav-list {
+        gap: 4px;
+    }
+
+    .nav-link {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+
+    .nav-cta {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+.services {
+    background-color: #333333; /* Dark Charcoal */
+    padding: 100px 24px;
+    position: relative;
+    overflow: hidden;
+    color: #ffffff;
+}
+
+/* Dotted Pattern - Left and Right */
+.services::before,
+.services::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 80%;
+    background-image: radial-gradient(#666 2px, transparent 2px);
+    background-size: 20px 20px;
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+.services::before {
+    left: 10px;
+}
+
+.services::after {
+    right: 10px;
+}
+
+.services-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* Header */
+.services-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 80px;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.header-left {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.services-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: #b0b0b0;
+    font-weight: 500;
+}
+
+.label-dash {
+    width: 20px;
+    height: 2px;
+    background-color: var(--color-accent);
+}
+
+.services-heading {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-accent); /* Services in Orange */
+    font-family: 'Montserrat', sans-serif;
+    position: relative;
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.services-heading .text-white {
+    color: #ffffff;
+}
+
+.heading-burst {
+    margin-top: -10px;
+    animation: pulse-burst 2s infinite;
+}
+
+@keyframes pulse-burst {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.1); opacity: 0.8; }
+}
+
+/* CTA Group */
+.services-cta-group {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.btn-hire-me {
+    background-color: var(--color-accent);
+    color: #fff;
+    padding: 12px 36px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(232, 118, 46, 0.4);
+}
+
+.btn-hire-me:hover {
+    background-color: var(--color-accent-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(232, 118, 46, 0.5);
+}
+
+.connect-connector {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.connect-line {
+    width: 40px;
+    height: 1px;
+    background-color: #666;
+}
+
+.connect-text {
+    font-size: 0.9rem;
+    color: #b0b0b0;
+}
+
+.services-content {
+    display: block;
+    margin-top: 40px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 100%;
+  height: 280px;
+  perspective: 1000px;
+  font-family: var(--font-family);
+}
+
+.title {
+  font-size: 1.2em;
+  font-weight: 700;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  box-shadow: 0 8px 20px rgba(232, 118, 46, 0.15);
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border: 2px solid var(--color-accent);
+  border-radius: 1rem;
+  padding: 24px;
+}
+
+.flip-card-front {
+  background: #ffffff;
+  color: var(--color-text-dark);
+}
+
+.flip-card-back {
+  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-hover) 100%);
+  color: var(--color-text-light);
+  transform: rotateY(180deg);
+}
+
+.flip-card-front p, .flip-card-back p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.service-icon-flip {
+    margin-bottom: 20px;
+    color: var(--color-accent);
+    transition: transform 0.3s ease;
+}
+
+.flip-card:hover .service-icon-flip {
+    transform: scale(1.1);
+}
+
+.flip-card-front .title {
+    color: var(--color-accent);
+}
+
+.flip-card-back .title {
+    color: var(--color-text-light);
+    margin-bottom: 16px;
+}
+
+/* Tech Badges */
+.tech-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+}
+
+.tech-badge {
+    color: var(--color-text-light);
+    padding: 8px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(4px);
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tech-badge i {
+    font-size: 2rem;
+}
+
+.tech-badge:hover {
+    background: rgba(255, 255, 255, 0.35);
+    transform: translateY(-2px);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 1200px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .flip-card {
+        height: 280px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .services-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .services-cta-group {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .flip-card {
+        height: 300px;
+    }
+    
+    .service-arrow-deco {
+        display: none;
+    }
+}
+.just-pink-bg{
+    background: linear-gradient(135deg, #fde4d8 0%, #fad4c4 100%);
+}
+
+.testimonials {
+    background: linear-gradient(135deg, #fde4d8 0%, #fad4c4 100%);
+    padding: 100px 24px 120px;
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonials::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 200px;
+    background-image: radial-gradient(circle, #e8762e 2px, transparent 2px);
+    background-size: 20px 20px;
+    opacity: 0.15;
+    pointer-events: none;
+}
+
+.testimonials::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 150px;
+    height: 150px;
+    background-image: radial-gradient(circle, #e8762e 2px, transparent 2px);
+    background-size: 20px 20px;
+    opacity: 0.15;
+    pointer-events: none;
+}
+
+.testimonials-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* Testimonials Header - Top row with label and lightning bolts */
+.testimonials-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+/* Decorative Lightning Bolts */
+.testimonial-deco {
+    width: 40px;
+    height: auto;
+    flex-shrink: 0;
+}
+
+.testimonial-deco-left {
+    transform: rotate(15deg);
+}
+
+.testimonial-deco-right {
+    transform: rotate(-15deg);
+}
+
+/* Testimonial Label */
+.testimonial-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: var(--color-text-dark);
+    font-weight: 500;
+}
+
+.label-line {
+    width: 30px;
+    height: 2px;
+    background-color: var(--color-text-dark);
+}
+
+/* Title Section */
+.testimonials-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.testimonials-heading {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-text-dark);
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 16px;
+    display: inline-flex;
+    align-items: flex-end;
+    gap: 4px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.testimonials-highlight {
+    color: var(--color-accent);
+}
+
+.heading-underline {
+    margin-left: -90px;
+    margin-bottom: -5px;
+}
+
+.testimonials-subtitle {
+    font-size: 0.95rem;
+    color: var(--color-text-dark);
+    opacity: 0.8;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Main Testimonial Layout */
+.testimonial-main {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 50px;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* Testimonial Image */
+.testimonial-image-wrapper {
+    position: relative;
+}
+
+.testimonial-image {
+    width: 280px;
+    height: 320px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+    border: 4px solid rgba(0, 0, 0, 0.8);
+}
+
+.testimonial-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Testimonial Content */
+.testimonial-content-main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Star Rating */
+.testimonial-rating {
+    display: flex;
+    gap: 6px;
+}
+
+.star-icon {
+    width: 22px;
+    height: 22px;
+    color: var(--color-accent);
+    filter: drop-shadow(0 2px 4px rgba(232, 118, 46, 0.3));
+}
+
+/* Testimonial Text */
+.testimonial-text {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--color-text-dark);
+    margin: 0;
+}
+
+/* Client Name */
+.testimonial-client-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-text-dark);
+    margin: 10px 0 0 0;
+}
+
+/* Decorative Arrow */
+.testimonial-arrow-deco {
+    position: absolute;
+    bottom: -40px;
+    right: -20px;
+    z-index: 1;
+}
+
+/* Responsive Design for Testimonials */
+@media screen and (max-width: 900px) {
+    .testimonial-main {
+        grid-template-columns: 220px 1fr;
+        gap: 30px;
+    }
+    
+    .testimonial-image {
+        width: 220px;
+        height: 260px;
+    }
+    
+    .testimonials-heading {
+        font-size: 2.2rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .testimonials {
+        padding: 80px 20px 100px;
+    }
+    
+    .testimonials-header {
+        gap: 15px;
+    }
+    
+    .testimonial-main {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+    
+    .testimonial-image-wrapper {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .testimonial-image {
+        width: 200px;
+        height: 240px;
+    }
+    
+    .testimonial-rating {
+        justify-content: center;
+    }
+    
+    .testimonials-heading {
+        font-size: 2rem;
+    }
+    
+    .testimonial-deco {
+        width: 35px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .testimonials-heading {
+        font-size: 1.75rem;
+    }
+    
+    .heading-underline {
+        margin-left: -70px;
+        width: 80px;
+    }
+    
+    .testimonials-subtitle {
+        font-size: 0.85rem;
+    }
+    
+    .testimonial-image {
+        width: 180px;
+        height: 220px;
+    }
+    
+    .testimonial-text {
+        font-size: 0.9rem;
+    }
+    
+    .testimonial-deco {
+        display: none;
+    }
+}
+
+.contact-cta {
+    background: #ffffff;
+    padding: 60px 24px 0px;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-cta-container {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.contact-deco {
+    position: absolute;
+    width: 60px;
+    height: auto;
+    z-index: 3;
+}
+
+.contact-deco-left {
+    top: -20px;
+    left: 50px;
+    transform: rotate(10deg);
+}
+
+.contact-deco-right {
+    top: 0;
+    right: 30px;
+    transform: rotate(-15deg);
+}
+
+/* Contact Card */
+.contact-card {
+    background: #333333;
+    border-radius: 24px;
+    padding: 40px 50px;
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+}
+
+/* Contact Content */
+.contact-content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.contact-heading {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.3;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.contact-highlight {
+    color: var(--color-accent);
+}
+
+/* Email Form */
+.contact-form {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+}
+
+.email-input-wrapper {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    align-items: center;
+    background: #4a4a4a;
+    border-radius: 50px;
+    padding: 6px 6px 6px 20px;
+    gap: 12px;
+}
+
+.email-icon {
+    color: #888;
+    flex-shrink: 0;
+}
+
+.email-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-family: var(--font-family);
+    padding: 10px 0;
+}
+
+.email-input::placeholder {
+    color: #888;
+}
+
+.send-btn {
+    background: var(--color-accent);
+    color: #ffffff;
+    border: none;
+    border-radius: 50px;
+    padding: 12px 28px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    font-family: var(--font-family);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.send-btn:hover {
+    background: var(--color-accent-hover);
+    transform: scale(1.02);
+}
+
+/* Contact Info */
+.contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #b0b0b0;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.contact-link svg {
+    color: #888;
+    transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+    color: #ffffff;
+}
+
+.contact-link:hover svg {
+    color: var(--color-accent);
+}
+
+
+.contact-image-wrapper {
+    position: relative;
+}
+
+.contact-image {
+    width: 240px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.footer {
+    background: #ffffff;
+    padding: 60px 24px 0px;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.footer-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #eee;
+    flex-wrap: wrap;
+}
+
+.footer-link {
+    color: var(--color-text-dark);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: var(--color-accent);
+}
+
+/* Footer Logo */
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.footer-logo-bracket {
+    color: var(--color-accent);
+    font-weight: 700;
+}
+
+.footer-logo-text {
+    color: var(--color-accent);
+    font-weight: 700;
+}
+
+.footer-logo-name {
+    color: var(--color-text-dark);
+    margin-left: 8px;
+    font-weight: 700;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 5px;
+    position: relative;
+}
+
+/* Footer Arrow Decoration */
+.footer-arrow-deco {
+    position: relative;
+}
+
+/* Footer Copyright */
+.footer-copyright {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0;
+}
+
+/* Footer Social Icons */
+.footer-socials {
+    display: flex;
+    gap: 12px;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    color: var(--color-text-dark);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: #ffffff;
+}
+
+.social-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* Footer Dots Pattern */
+.footer-dots {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    background-image: radial-gradient(circle, #e8762e 2px, transparent 2px);
+    background-size: 15px 15px;
+    opacity: 0.2;
+    pointer-events: none;
+}
+
+/* Responsive Design for Contact/CTA and Footer */
+@media screen and (max-width: 900px) {
+    .contact-card {
+        padding: 40px;
+    }
+    
+    .contact-heading {
+        font-size: 1.75rem;
+    }
+    
+    .contact-image {
+        width: 200px;
+    }
+    
+    .contact-deco-left {
+        left: 20px;
+    }
+    
+    .contact-deco-right {
+        right: 10px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .contact-cta {
+        padding: 60px 20px 80px;
+    }
+    
+    .contact-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 40px 30px;
+    }
+    
+    .contact-content {
+        align-items: center;
+    }
+    
+    .contact-heading {
+        font-size: 1.5rem;
+    }
+    
+    .email-input-wrapper {
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    .email-input {
+        min-width: 0; 
+    }
+    
+    .contact-info {
+        justify-content: center;
+    }
+    
+    .contact-image-wrapper {
+        display: none;
+    }
+    
+    .contact-deco {
+        width: 50px;
+    }
+    
+    .contact-deco-left {
+        left: 10px;
+        top: -20px;
+    }
+    
+    .contact-deco-right {
+        right: 5px;
+        top: -10px;
+    }
+    
+    /* Footer Mobile */
+    .footer {
+        padding: 40px 20px 30px;
+    }
+    
+    .footer-nav {
+        gap: 15px;
+    }
+    
+    .footer-logo {
+        order: -1;
+        margin-bottom: 10px;
+        flex-basis: 100%;
+        justify-content: center;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+    
+    .footer-arrow-deco {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .contact-heading {
+        font-size: 1.25rem;
+    }
+    
+    .send-btn {
+        padding: 10px 20px;
+        font-size: 0.85rem;
+    }
+    
+    .contact-link {
+        font-size: 0.8rem;
+    }
+}
+
+.thankyou-section {
+    background: linear-gradient(135deg, #fde4d8 0%, #fad4c4 100%);
+    padding: 80px 24px 100px;
+    position: relative;
+    overflow: hidden;
+}
+
+.thankyou-dots {
+    position: absolute;
+    width: 100px;
+    height: 200px;
+    background-image: radial-gradient(circle, #e8762e 3px, transparent 3px);
+    background-size: 15px 15px;
+    opacity: 0.4;
+}
+
+.thankyou-dots-left {
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.thankyou-dots-right {
+    right: 0;
+    top: 20%;
+}
+
+.thankyou-container {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.thankyou-lightning-left {
+    position: absolute;
+    left: -100px;
+    bottom: -150px;
+    z-index: 1;
+}
+
+.thankyou-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.thankyou-text-wrapper {
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 40px;
+}
+
+.thankyou-row-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.thankyou-heading-top {
+    font-family: 'Titan One', cursive;
+    font-size: 4.5rem;
+    font-weight: 400;
+    color: #f17a34;
+    line-height: 1;
+    margin: 0;
+    letter-spacing: -0.02em;
+}
+
+.thankyou-row-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+    margin-top: -10px;
+}
+
+.thankyou-heading-bottom {
+    font-family: 'Titan One', cursive;
+    font-size: 4.5rem;
+    font-weight: 400;
+    color: #f17a34;
+    line-height: 1;
+    margin: 0;
+    letter-spacing: -0.02em;
+}
+
+.thankyou-y {
+    color: var(--color-accent);
+    position: relative;
+}
+
+.thankyou-y::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 10px solid var(--color-accent);
+}
+
+.thankyou-thumbsup {
+    margin-left: 15px;
+    color: var(--color-accent);
+}
+
+.thankyou-thumbsup svg {
+    width: 40px;
+    height: 40px;
+}
+
+.thankyou-follow-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 32px;
+    background: var(--color-accent);
+    color: var(--color-text-light);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: var(--font-family);
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(232, 118, 46, 0.3);
+}
+
+.thankyou-follow-btn:hover {
+    background: var(--color-accent-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(232, 118, 46, 0.4);
+}
+
+.follow-plus {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.thankyou-card {
+    background: #3d3d3d;
+    border-radius: 20px;
+    padding: 35px 45px;
+    width: 100%;
+    max-width: 550px;
+    text-align: center;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+}
+
+.thankyou-card-heading {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.4;
+    margin: 0 0 25px 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.thankyou-card-heading .highlight {
+    color: var(--color-accent);
+}
+
+.thankyou-form {
+    margin: 0 auto 30px auto;
+    width: 100%;
+    max-width: 420px;
+}
+
+.thankyou-form .email-input-wrapper {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 6px 6px 6px 20px;
+    border-radius: 50px;
+}
+
+.thankyou-form .email-icon {
+    color: #b8b8b8;
+}
+
+.thankyou-form .email-input {
+    color: #ffffff;
+}
+
+.thankyou-form .email-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.thankyou-form .send-btn {
+    background: var(--color-accent);
+    color: #ffffff;
+    border-radius: 50px;
+    padding: 10px 24px;
+    font-weight: 600;
+}
+
+.thankyou-form .send-btn:hover {
+    background: var(--color-accent-hover);
+}
+
+.thankyou-contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.thankyou-contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #b8b8b8;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+}
+
+.thankyou-contact-link:hover {
+    color: var(--color-accent);
+}
+
+.thankyou-contact-link svg {
+    color: var(--color-accent);
+}
+
+@media screen and (max-width: 900px) {
+    .thankyou-heading-top,
+    .thankyou-heading-bottom {
+        font-size: 3.5rem;
+    }
+    
+    .thankyou-thumbsup svg {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .thankyou-lightning-left {
+        left: -60px;
+    }
+    
+    .thankyou-lightning-left svg {
+        width: 60px;
+        height: 90px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .thankyou-section {
+        padding: 60px 20px 80px;
+    }
+    
+    .thankyou-heading-top,
+    .thankyou-heading-bottom {
+        font-size: 2.5rem;
+    }
+    
+    .thankyou-row-top {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    .thankyou-row-bottom {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-top: 10px;
+    }
+    
+    .thankyou-thumbsup {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+    
+    .thankyou-thumbsup svg {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .thankyou-lightning-left {
+        display: none;
+    }
+    
+    .thankyou-card {
+        padding: 30px 25px;
+    }
+    
+    .thankyou-card-heading {
+        font-size: 1.2rem;
+    }
+    
+    .thankyou-dots {
+        width: 60px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .thankyou-heading-top,
+    .thankyou-heading-bottom {
+        font-size: 2rem;
+    }
+    
+    .thankyou-y::after {
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 7px solid var(--color-accent);
+    }
+    
+    .thankyou-follow-btn {
+        padding: 10px 26px;
+        font-size: 0.9rem;
+    }
+    
+    .thankyou-card {
+        padding: 25px 20px;
+    }
+    
+    .thankyou-card-heading {
+        font-size: 1.1rem;
+    }
+    
+
+    
+    .thankyou-contact-info {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .thankyou-dots {
+        display: none;
+    }
+}
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    z-index: 1002;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.popup-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.project-popup {
+    background: var(--color-bg-light);
+    padding: 40px;
+    border-radius: 20px;
+    position: relative;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+}
+
+.popup-overlay.active .project-popup {
+    transform: translateY(0);
+}
+
+.popup-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--color-text-dark);
+    cursor: pointer;
+    line-height: 1;
+    padding: 5px;
+    transition: color 0.2s;
+}
+
+.popup-close:hover {
+    color: var(--color-accent);
+}
+
+.popup-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: var(--color-text-dark);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.popup-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+@media screen and (min-width: 768px) {
+    .popup-buttons {
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+
+.popup-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 24px;
+    background: white;
+    color: var(--color-text-dark);
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 12px;
+    border: 2px solid #ddd;
+    transition: all 0.2s ease;
+    font-family: var(--font-family);
+    min-width: 110px;
+}
+
+.popup-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.popup-btn-web:hover {
+    border-color: #e34f26; /* HTML5 Color */
+    color: #e34f26;
+}
+
+.popup-btn-android:hover {
+    border-color: #3ddc84; /* Android Green */
+    color: #3ddc84;
+}
+
+.popup-btn-ios:hover {
+    border-color: #000000; /* Apple Black */
+    color: #000000;
+}
+
+
+.popup-btn i {
+    font-size: 1.4rem;
+}
+
+.filter-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 40px;
+    padding: 0 20px;
+}
+
+.filter-btn {
+    padding: 10px 24px;
+    border: 2px solid var(--color-border);
+    border-radius: 50px;
+    background: transparent;
+    color: var(--color-text-dark);
+    font-size: 0.95rem;
+    font-weight: 500;
+    font-family: var(--font-family);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    border-color: var(--color-text-dark);
+    transform: translateY(-2px);
+}
+
+.filter-btn.active {
+    background: var(--color-accent);
+    color: var(--color-text-light);
+    border-color: var(--color-accent);
+    box-shadow: 0 4px 12px rgba(232, 118, 46, 0.3);
+}
+
+/* Filter Animation Classes */
+.project-card {
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.project-card.hide {
+    opacity: 0;
+    transform: scale(0.9);
+    pointer-events: none;
+}
+
+.project-card.show {
+    display: block !important; /* Force block display for project-card */
+    animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive adjustments for filter buttons */
+@media (max-width: 600px) {
+    .filter-container {
+        gap: 10px;
+    }
+    
+    .filter-btn {
+        padding: 8px 16px;
+        font-size: 0.85rem;
+    }
+}
+
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Defer Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    </noscript>
+    
+    <!-- Defer Devicon -->
+    <link href="assets/devicon-minimal.css" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+        <link href="assets/devicon-minimal.css" rel="stylesheet">
+    </noscript>
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "v6rp0fme6r");
+    </script>
+    <!-- Google reCAPTCHA Enterprise - Loaded dynamically -->
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="assets/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="assets/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="assets/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="assets/favicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- Logo -->
+            <a href="#" class="nav-logo">
+                <span class="logo-bracket"><</span>
+                <span class="logo-text">div</span>
+                <span class="logo-bracket">></span>
+                <span class="logo-name">Ahmed</span>
+            </a>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+
+            <!-- Navigation Links -->
+            <div class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link active">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link">About me</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#projects" class="nav-link">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+
+                <!-- CTA Button -->
+                <a href="#contact" class="nav-cta">Hire me</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <!-- Main Heading -->
+            <div class="hero-heading">
+                <h1>I'm <span class="highlight-name">Ahmed</span></h1>
+                <h2>A Web and APP Developper</h2>
+            </div>
+
+            <!-- Technology Icons -->
+            <div class="tech-icons">
+                <img src="assets/icons/icon-js.webp" alt="JavaScript" class="tech-icon tech-icon-js">
+                <img src="assets/icons/icon-html-5.webp" alt="HTML5" class="tech-icon tech-icon-html">
+                <img src="assets/icons/icon-python.webp" alt="Python" class="tech-icon tech-icon-python">
+                <img src="assets/icons/flutter-icon.png" alt="Flutter" class="tech-icon tech-icon-flutter">
+            </div>
+
+            <!-- Profile Section -->
+            <div class="profile-section">
+                <!-- Left Side: Description & Button -->
+                <div class="profile-left">
+                    <img src="assets/icons/quote-icon.webp" alt="Quotation mark icon" width="40" height="40">
+                    <p class="profile-description">
+                        I craft pixel-perfect web solutions that bring your ideas to life. With a sharp eye for 
+                        detail and a commitment to quality, I deliver clean, high-performance code every time.
+                    </p>
+                    <a href="assets/pdf/Ahmed_Abidi_CV.pdf" target="_blank" rel="noopener noreferrer" class="cta-button" style="display: inline-flex; justify-content: center; align-items: center; text-decoration: none;">
+                        open CV
+                    </a>
+                </div>
+
+                <!-- Center: Profile Image -->
+                <div class="profile-image-wrapper">
+                    <img src="assets/icons/abidi-ahmed.webp" alt="Ahmed Profile" class="profile-image" fetchpriority="high">
+                </div>
+
+                <!-- Right Side: Stats -->
+                <div class="profile-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">2+</span>
+                        <span class="stat-label">years of experience</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">100</span>
+                        <span class="stat-label">solutions delivered</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">5+</span>
+                        <span class="stat-label">clients served</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Divider Image -->
+            <div class="hero-divider">
+                <img src="assets/icons/divider.png" alt="Divider" class="divider-image">
+                
+                <!-- Tech Marquee -->
+                <div class="tech-marquee">
+                    <div class="tech-track">
+                        <!-- Tech Items (Set 1) -->
+                        <div class="tech-item"><i class="devicon-javascript-plain colored"></i> JavaScript</div>
+                        <div class="tech-item"><i class="devicon-typescript-plain colored"></i> TypeScript</div>
+                        <div class="tech-item"><i class="devicon-python-plain colored"></i> Python</div>
+                        <div class="tech-item"><i class="devicon-html5-plain colored"></i> HTML5</div>
+                        <div class="tech-item"><i class="devicon-css3-plain colored"></i> CSS3</div>
+                        <div class="tech-item"><i class="devicon-react-original colored"></i> React</div>
+                        <div class="tech-item"><i class="devicon-nextjs-original colored"></i> Next.js</div>
+                        <div class="tech-item"><i class="devicon-nodejs-plain colored"></i> Node.js</div>
+                        <div class="tech-item"><i class="devicon-tailwindcss-original colored"></i> TailwindCSS</div>
+                        <div class="tech-item"><i class="devicon-flutter-plain colored"></i> Flutter</div>
+                        <div class="tech-item"><i class="devicon-dart-plain colored"></i> Dart</div>
+                        <div class="tech-item"><i class="devicon-firebase-plain colored"></i> Firebase</div>
+                        <div class="tech-item"><i class="devicon-supabase-plain colored"></i> Supabase</div>
+                        <div class="tech-item"><i class="devicon-mongodb-plain colored"></i> MongoDB</div>
+                        <div class="tech-item"><i class="devicon-postgresql-plain colored"></i> PostgreSQL</div>
+                        <div class="tech-item"><i class="devicon-redis-plain colored"></i> Redis</div>
+                        <div class="tech-item"><i class="devicon-docker-plain colored"></i> Docker</div>
+                        <div class="tech-item"><i class="devicon-git-plain colored"></i> Git</div>
+                        <div class="tech-item"><i class="devicon-github-original"></i> GitHub</div>
+
+                        <!-- Tech Items (Set 2 - Duplicate for infinite scroll) -->
+                        <div class="tech-item"><i class="devicon-javascript-plain colored"></i> JavaScript</div>
+                        <div class="tech-item"><i class="devicon-typescript-plain colored"></i> TypeScript</div>
+                        <div class="tech-item"><i class="devicon-python-plain colored"></i> Python</div>
+                        <div class="tech-item"><i class="devicon-html5-plain colored"></i> HTML5</div>
+                        <div class="tech-item"><i class="devicon-css3-plain colored"></i> CSS3</div>
+                        <div class="tech-item"><i class="devicon-react-original colored"></i> React</div>
+                        <div class="tech-item"><i class="devicon-nextjs-original colored"></i> Next.js</div>
+                        <div class="tech-item"><i class="devicon-nodejs-plain colored"></i> Node.js</div>
+                        <div class="tech-item"><i class="devicon-tailwindcss-original colored"></i> TailwindCSS</div>
+                        <div class="tech-item"><i class="devicon-flutter-plain colored"></i> Flutter</div>
+                        <div class="tech-item"><i class="devicon-dart-plain colored"></i> Dart</div>
+                        <div class="tech-item"><i class="devicon-firebase-plain colored"></i> Firebase</div>
+                        <div class="tech-item"><i class="devicon-supabase-plain colored"></i> Supabase</div>
+                        <div class="tech-item"><i class="devicon-mongodb-plain colored"></i> MongoDB</div>
+                        <div class="tech-item"><i class="devicon-postgresql-plain colored"></i> PostgreSQL</div>
+                        <div class="tech-item"><i class="devicon-redis-plain colored"></i> Redis</div>
+                        <div class="tech-item"><i class="devicon-docker-plain colored"></i> Docker</div>
+                        <div class="tech-item"><i class="devicon-git-plain colored"></i> Git</div>
+                        <div class="tech-item"><i class="devicon-github-original"></i> GitHub</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-container">
+            <!-- Section Label -->
+            <div class="section-label">About</div>
+            
+            <div class="about-content">
+
+
+                <!-- Right Side: Content -->
+                <div class="about-text">
+                    <h2 class="about-heading">
+                        <svg class="about-heading-deco" width="120" height="20" viewBox="0 0 120 20" fill="none">
+                            <path d="M 2 10 L 118 10" stroke="#e8762e" stroke-width="2" fill="none"/>
+                        </svg>
+                        ABOUT ME
+                        <svg class="about-heading-deco" width="120" height="20" viewBox="0 0 120 20" fill="none">
+                            <path d="M 2 10 L 118 10" stroke="#e8762e" stroke-width="2" fill="none"/>
+                        </svg>
+                    </h2>
+                    
+                    <p class="about-description">
+                        I'm a passionate Web Developer who specializes in building dynamic <strong>websites</strong> and cross-platform mobile apps using <strong>Flutter</strong>. 
+                        I focus on creating clean, responsive, and user-friendly digital experiences that look good and perform smoothly across all devices. 
+                        With a strong eye for design, I blend creativity and functionality to deliver impactful solutions. I work with modern technologies like 
+                        HTML, CSS, JavaScript, React, and Node.js, and I'm always exploring new <strong>tech</strong> to stay ahead. When I'm not coding, I'm improving my 
+                        UI/UX skills or brainstorming ways to make the web more intuitive.
+                    </p>
+
+                    <div class="about-buttons">
+                        <a href="#projects" class="about-btn about-btn-primary">Projects</a>
+                        <a href="#contact" class="about-btn about-btn-secondary">Let's connect</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="projects-container">
+            <!-- Section Label -->
+            <div class="section-label">Projects</div>
+            
+            <div class="projects-header">
+                <img src="assets/icons/flash-icon.webp" alt="Decorative yellow flash icon" class="projects-deco projects-deco-left">
+                
+                <div class="projects-title-wrapper">
+                    <h2 class="projects-heading">Selected <span class="projects-highlight">Work</span></h2>
+                    <img src="assets/icons/crown-icon.webp" alt="Gold crown icon" width="38" class="projects-crown">
+                    <!-- Decorative Arrow -->
+                    <p class="projects-subtitle">Here are a few projects I've loved working on.</p>
+                </div>
+
+                <img src="assets/icons/flash-icon.webp" alt="Decorative yellow flash icon" class="projects-deco projects-deco-right">
+            </div>
+            
+            <!-- Projects Grid -->
+            <div class="projects-grid">
+                <!-- Project Card 1: Chart AI -->
+                <article class="article-wrapper project-card" data-web="projects/ChartAI/" data-android="https://play.google.com/store/apps/details?id=com.dczt.chartai" data-ios="https://apps.apple.com/us/app/chart-ai-ai-assisted-trading/id6744277613">
+                    <div class="rounded-lg container-project" style="background-image: url('projects/ChartAI/splash.webp');"></div>
+                    <div class="project-info">
+                        <div class="flex-pr">
+                            <div class="project-title text-nowrap">Chart AI</div>
+                            <div class="project-hover">
+                                <svg style="color: black;" xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" color="black" stroke-linejoin="round" stroke-linecap="round" viewBox="0 0 24 24" stroke-width="2" fill="none" stroke="currentColor">
+                                    <line y2="12" x2="19" y1="12" x1="5"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="types">
+                            <span style="background-color: rgba(232, 118, 46, 0.3); color: rgb(150, 60, 10);" class="project-type">• AI/ML</span>
+                            <span style="background-color: rgba(255, 154, 86, 0.3); color: rgb(120, 50, 0);" class="project-type">• Financial</span>
+                            <span style="background-color: rgba(232, 118, 46, 0.3); color: rgb(150, 60, 10);" class="project-type">• App</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project Card 2: CTF Events -->
+                <article class="article-wrapper project-card" data-web="projects/ctf-events/" data-android="" data-ios="">
+                    <div class="rounded-lg container-project" style="background-image: url('projects/ctf-events/splash.jpg');"></div>
+                    <div class="project-info">
+                        <div class="flex-pr">
+                            <div class="project-title text-nowrap">CTF Events</div>
+                            <div class="project-hover">
+                                <svg style="color: black;" xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" color="black" stroke-linejoin="round" stroke-linecap="round" viewBox="0 0 24 24" stroke-width="2" fill="none" stroke="currentColor">
+                                    <line y2="12" x2="19" y1="12" x1="5"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="types">
+                            <span style="background-color: rgba(255, 216, 155, 0.5); color: rgb(150, 90, 20);" class="project-type">• Flutter</span>
+                            <span style="background-color: rgba(255, 138, 91, 0.4); color: rgb(140, 50, 10);" class="project-type">• Security</span>
+                            <span style="background-color: rgba(255, 216, 155, 0.5); color: rgb(150, 90, 20);" class="project-type">• Events</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project Card 3: TN Bus Tickets -->
+                <article class="article-wrapper project-card" data-web="projects/tnbustickets/" data-android="" data-ios="https://apps.apple.com/us/app/tn-bus-tickets/id6755974407">
+                    <div class="rounded-lg container-project" style="background-image: url('projects/tnbustickets/splash.png');"></div>
+                    <div class="project-info">
+                        <div class="flex-pr">
+                            <div class="project-title text-nowrap">TN Bus Tickets</div>
+                            <div class="project-hover">
+                                <svg style="color: black;" xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" color="black" stroke-linejoin="round" stroke-linecap="round" viewBox="0 0 24 24" stroke-width="2" fill="none" stroke="currentColor">
+                                    <line y2="12" x2="19" y1="12" x1="5"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="types">
+                            <span style="background-color: rgba(255, 184, 140, 0.5); color: rgb(140, 70, 20);" class="project-type">• Transport</span>
+                            <span style="background-color: rgba(234, 140, 85, 0.4); color: rgb(130, 55, 15);" class="project-type">• Tunisia</span>
+                            <span style="background-color: rgba(255, 184, 140, 0.5); color: rgb(140, 70, 20);" class="project-type">• Mobile</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Client Websites Subsection -->
+            <div class="client-projects-wrapper">
+                <div class="client-projects-header">
+                    <h3 class="client-heading">Client <span class="client-highlight">Websites</span></h3>
+                    <p class="client-subtitle">Live websites built for satisfied clients</p>
+                </div>
+                
+                <div class="client-grid">
+                    <!-- Site 1 -->
+                    <a href="https://ofrabeauty.com" target="_blank" rel="noopener noreferrer" class="client-card">
+                        <div class="client-card-content">
+                            <div class="client-url">ofrabeauty.com</div>
+                            <div class="client-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Site 2 -->
+                    <a href="https://rockyjourneys.com" target="_blank" rel="noopener noreferrer" class="client-card">
+                        <div class="client-card-content">
+                            <div class="client-url">rockyjourneys.com</div>
+                            <div class="client-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Site 3 -->
+                    <a href="https://craftingstudiohub.com" target="_blank" rel="noopener noreferrer" class="client-card">
+                        <div class="client-card-content">
+                            <div class="client-url">craftingstudiohub.com</div>
+                            <div class="client-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Site 4 -->
+                    <a href="https://coffeeinnomad.com" target="_blank" rel="noopener noreferrer" class="client-card">
+                        <div class="client-card-content">
+                            <div class="client-url">coffeeinnomad.com</div>
+                            <div class="client-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Site 5 -->
+                    <a href="https://dowlingmakeup.com" target="_blank" rel="noopener noreferrer" class="client-card">
+                        <div class="client-card-content">
+                            <div class="client-url">dowlingmakeup.com</div>
+                            <div class="client-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Site 6 -->
+                    <a href="https://virtualdataroomsoftware.net" target="_blank" rel="noopener noreferrer" class="client-card">
+                        <div class="client-card-content">
+                            <div class="client-url">virtualdataroomsoftware.net</div>
+                            <div class="client-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Site 7 -->
+                    <a href="https://bonusmak.com" target="_blank" rel="noopener noreferrer" class="client-card">
+                        <div class="client-card-content">
+                            <div class="client-url">bonusmak.com</div>
+                            <div class="client-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Site 8 -->
+                    <a href="https://captain-rewards.com" target="_blank" rel="noopener noreferrer" class="client-card">
+                        <div class="client-card-content">
+                            <div class="client-url">captain-rewards.com</div>
+                            <div class="client-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- View All Projects Button -->
+            <div class="projects-button-wrapper">
+                <a href="projects/" class="projects-view-all-btn">View all projects</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="services-container">
+            <!-- Header -->
+            <div class="services-header">
+                <div class="header-left">
+                    <div class="services-label"><span class="label-dash"></span> My services</div>
+                    <h2 class="services-heading">Services <span class="text-white">I Provide</span></h2>
+                </div>
+                <div class="services-cta-group">
+                    <a href="#contact" class="btn-hire-me">Hire me</a>
+                    <div class="connect-connector">
+                        <span class="connect-line"></span>
+                        <span class="connect-text">Let's connect</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content -->
+            <div class="services-content">
+
+                <!-- Right Side: Service Cards -->
+                <div class="services-grid">
+                    <!-- Card 1: Web Development -->
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="service-icon-flip">
+                                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="16 18 22 12 16 6"></polyline>
+                                        <polyline points="8 6 2 12 8 18"></polyline>
+                                    </svg>
+                                </div>
+                                <p class="title">Web Development</p>
+                                <p>Building fast, responsive, and scalable websites using modern technologies and best practices.</p>
+                            </div>
+                            <div class="flip-card-back">
+                                <p class="title">Development Stack</p>
+                                <div class="tech-badges">
+                                    <span class="tech-badge"><i class="devicon-nextjs-original colored"></i>NextJs</span>
+                                    <span class="tech-badge"><i class="devicon-nodejs-plain colored"></i>Node.js</span>
+                                    <span class="tech-badge"><i class="devicon-mongodb-plain colored"></i>MongoDB</span>
+                                    <span class="tech-badge"><i class="devicon-postgresql-plain colored"></i>PostgreSQL</span>
+                                    <span class="tech-badge"><i class="devicon-redis-plain colored"></i>Redis</span>
+                                    <span class="tech-badge"><i class="devicon-vercel-original"></i>Vercel</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Front-End Development -->
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="service-icon-flip">
+                                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                                        <polyline points="2 17 12 22 22 17"></polyline>
+                                        <polyline points="2 12 12 17 22 12"></polyline>
+                                    </svg>
+                                </div>
+                                <p class="title">Front-End Development</p>
+                                <p>Transforming UI designs into interactive, high-performance web pages with HTML, CSS, and JavaScript frameworks.</p>
+                            </div>
+                            <div class="flip-card-back">
+                                <p class="title">Technologies</p>
+                                <div class="tech-badges">
+                                    <span class="tech-badge"><i class="devicon-html5-plain colored"></i>HTML5</span>
+                                    <span class="tech-badge"><i class="devicon-css3-plain colored"></i>CSS3</span>
+                                    <span class="tech-badge"><i class="devicon-javascript-plain colored"></i>JavaScript</span>
+                                    <span class="tech-badge"><i class="devicon-typescript-plain colored"></i>TypeScript</span>
+                                    <span class="tech-badge"><i class="devicon-react-original colored"></i>React</span>
+                                    <span class="tech-badge"><i class="devicon-tailwindcss-original colored"></i>Tailwind</span>
+                                    <!-- <span class="tech-badge"><i class="devicon-sass-original colored"></i>Sass</span> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Website Maintenance -->
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="service-icon-flip">
+                                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                        <line x1="8" y1="21" x2="16" y2="21"></line>
+                                        <line x1="12" y1="17" x2="12" y2="21"></line>
+                                    </svg>
+                                </div>
+                                <p class="title">Website Maintenance</p>
+                                <p>Ensuring your website stays secure, updated, and optimized for performance.</p>
+                            </div>
+                            <div class="flip-card-back">
+                                <p class="title">Tools Used</p>
+                                <div class="tech-badges">
+                                    <span class="tech-badge"><i class="devicon-git-plain colored"></i>Git</span>
+                                    <span class="tech-badge"><i class="devicon-github-original"></i>GitHub</span>
+                                    <span class="tech-badge"><i class="devicon-vercel-original"></i>Vercel</span>
+                                    <span class="tech-badge"><i class="devicon-docker-plain colored"></i>Docker</span>
+                                    <span class="tech-badge"><i class="devicon-githubactions-plain"></i>Actions</span>
+                                    <span class="tech-badge"><i class="devicon-npm-original-wordmark colored"></i>npm</span>
+                                    <span class="tech-badge"><i class="devicon-postman-plain colored"></i>Postman</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Android/iOS App Dev -->
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="service-icon-flip">
+                                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                                        <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                                    </svg>
+                                </div>
+                                <p class="title">Android/iOS App Dev</p>
+                                <p>Building cross-platform mobile applications with Flutter for seamless Android and iOS experiences.</p>
+                            </div>
+                            <div class="flip-card-back">
+                                <p class="title">Mobile Stack</p>
+                                <div class="tech-badges">
+                                    <span class="tech-badge"><i class="devicon-flutter-plain colored"></i>Flutter</span>
+                                    <span class="tech-badge"><i class="devicon-dart-plain colored"></i>Dart</span>
+                                    <span class="tech-badge"><i class="devicon-firebase-plain colored"></i>Firebase</span>
+                                    <span class="tech-badge"><i class="devicon-supabase-plain colored"></i>Supabase</span>
+                                    <span class="tech-badge"><i class="devicon-fastapi-plain colored"></i>FastAPI</span>
+                                    <span class="tech-badge"><i class="devicon-sqlite-plain colored"></i>SQLite</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="testimonials-container">
+            <!-- Header with Label and Lightning Bolts -->
+            <div class="testimonials-header">
+                <!-- Lightning Bolt Left -->
+                <img src="assets/icons/flash-icon.webp" alt="Decorative yellow flash icon" class="testimonial-deco testimonial-deco-left">
+                
+                <!-- Testimonial Label -->
+                <div class="testimonial-label">
+                    <span class="label-line"></span>
+                    <span>Testimonial</span>
+                </div>
+                
+                <!-- Lightning Bolt Right -->
+                <img src="assets/icons/flash-icon.webp" alt="Decorative yellow flash icon" class="testimonial-deco testimonial-deco-right">
+            </div>
+
+            <!-- Title Section -->
+            <div class="testimonials-title">
+                <h2 class="testimonials-heading">What &nbsp;<span class="testimonials-highlight">client say</span><svg class="heading-underline" width="100" height="20" viewBox="0 0 100 20"><path d="M5 15 Q50 5 95 15" stroke="#e8762e" stroke-width="2" fill="none" stroke-linecap="round"/></svg></h2>
+                <p class="testimonials-subtitle">Real experiences from people I've worked with, sharing how my work helped bring their ideas to life.</p>
+            </div>
+
+            <!-- Single Testimonial Layout -->
+            <div class="testimonial-main">
+                <!-- Client Image -->
+                <div class="testimonial-image-wrapper">
+                    <div class="testimonial-image">
+                        <img src="assets/images/clients/david-client.webp" alt="David - Satisfied Client">
+                    </div>
+                </div>
+
+                <!-- Testimonial Content -->
+                <div class="testimonial-content-main">
+                    <!-- Star Rating -->
+                    <div class="testimonial-rating">
+                        <svg class="star-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="star-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="star-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="star-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="star-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+
+                    <!-- Testimonial Text -->
+                    <p class="testimonial-text">
+                        It was great working with this freelancer and completed the app in flutter successfully with pretty clean code and gave me all instructions for me to understand it. Would recommend.
+                    </p>
+
+                    <!-- Client Name -->
+                    <h4 class="testimonial-client-name">David Mitchell</h4>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact/CTA Section -->
+    <section class="contact-cta" id="contact">
+        <div class="contact-cta-container">
+            <!-- Decorative Lightning Bolts -->
+            <img src="assets/icons/flash-icon.webp" alt="Decorative yellow flash icon" class="contact-deco contact-deco-left">
+            <img src="assets/icons/flash-icon.webp" alt="Decorative yellow flash icon" class="contact-deco contact-deco-right">
+
+            <!-- Contact Card -->
+            <div class="contact-card">
+                <!-- Left Content -->
+                <div class="contact-content">
+                    <h2 class="contact-heading">Have an awesome project idea? <span class="contact-highlight">Let's discuss</span></h2>
+                    
+                    <form class="contact-form" id="contactForm">
+                        <div class="email-input-wrapper">
+                            <svg class="email-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            </svg>
+                            <input type="email" id="emailInput" placeholder="your@email.com" class="email-input" required maxlength="254" autocomplete="email" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$">
+                            <button type="button" id="sendBtn" class="send-btn">Send</button>
+                        </div>
+                        <div id="recaptcha-main"></div>
+                    </form>
+
+                    <!-- Contact Info -->
+                    <div class="contact-info">
+                        <a href="tel:+21627065061" class="contact-link">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                            <span>+216 27065061</span>
+                        </a>
+                        <a href="https://www.upwork.com/freelancers/~01e261e981175af1ae" target="_blank" rel="noopener noreferrer" class="contact-link">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.828v7.112c-.002 1.406-1.141 2.546-2.547 2.546-1.405 0-2.543-1.14-2.543-2.546V3.492H0v7.112c0 2.917 2.37 5.303 5.281 5.303 2.913 0 5.283-2.386 5.283-5.303v-1.19c.529 1.107 1.182 2.229 1.974 3.221l-1.673 7.873h2.797l1.213-5.71c1.063.679 2.285 1.109 3.686 1.109 3 0 5.439-2.452 5.439-5.45 0-3-2.439-5.439-5.439-5.439z"/>
+                            </svg>
+                            <span>Upwork</span>
+                        </a>
+                        <a href="https://github.com/abidiahmedcom" target="_blank" rel="noopener noreferrer" class="contact-link">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                            <span>@abidiahmedcom</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Footer Navigation -->
+            <nav class="footer-nav">
+                <a href="#about" class="footer-link">About</a>
+                <a href="#services" class="footer-link">Services</a>
+                
+                <!-- Footer Logo -->
+                <a href="#" class="footer-logo">
+                    <span class="footer-logo-bracket"><</span>
+                    <span class="footer-logo-text">div</span>
+                    <span class="footer-logo-bracket">></span>
+                    <span class="footer-logo-name">Ahmed</span>
+                </a>
+                
+                <a href="#projects" class="footer-link">Projects</a>
+                <a href="#testimonials" class="footer-link">Testimonial</a>
+            </nav>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <!-- Decorative Arrow -->
+                <div class="footer-arrow-deco">
+                    <svg width="40" height="50" viewBox="0 0 40 50" fill="none">
+                        <path d="M10 5 L10 35 L30 35" stroke="#fad4c4" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M25 28 L32 35 L25 42" stroke="#e8762e" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                    </svg>
+                </div>
+
+                <!-- Copyright -->
+                <p class="footer-copyright">© 2026 Ahmed. All rights reserved.</p>
+
+                <!-- Social Icons -->
+                <div class="footer-socials">
+                    <a href="https://wa.me/21627065061" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="WhatsApp">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.upwork.com/freelancers/~01e261e981175af1ae" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Upwork">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.828v7.112c-.002 1.406-1.141 2.546-2.547 2.546-1.405 0-2.543-1.14-2.543-2.546V3.492H0v7.112c0 2.917 2.37 5.303 5.281 5.303 2.913 0 5.283-2.386 5.283-5.303v-1.19c.529 1.107 1.182 2.229 1.974 3.221l-1.673 7.873h2.797l1.213-5.71c1.063.679 2.285 1.109 3.686 1.109 3 0 5.439-2.452 5.439-5.45 0-3-2.439-5.439-5.439-5.439z"/>
+                        </svg>
+                    </a>
+                    <a href="https://github.com/abidiahmedcom" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dotted Pattern -->
+        <div class="footer-dots"></div>
+    </footer>
+
+    <!-- Thank You Section -->
+    <section class="thankyou-section">
+        <!-- Decorative Dots Left -->
+        <div class="thankyou-dots thankyou-dots-left"></div>
+        <!-- Decorative Dots Right -->
+        <div class="thankyou-dots thankyou-dots-right"></div>
+        
+        <div class="thankyou-container">
+            <!-- Lightning Bolt Left -->
+            <div class="thankyou-lightning-left">
+                <svg width="120" height="120" viewBox="0 0 80 120" fill="none">
+                    <path d="M 45 5 L 25 50 L 40 50 L 20 115 L 82 44 L 56 44 L 86 5 Z" stroke="#e8762e" stroke-width="4" fill="none" stroke-linejoin="round"/>
+                </svg>
+            </div>
+
+            <!-- Main Content -->
+            <div class="thankyou-content">
+                <!-- Thank You Text - New Layout -->
+                <div class="thankyou-text-wrapper">
+                    <!-- Top Row: REACHED THE END? + Thumbs Up -->
+                    <div class="thankyou-row-top">
+                        <h2 class="thankyou-heading-top">REACHED THE <span style="color: var(--color-accent);">END?</span></h2>
+                        <!-- Thumbs Up Icon -->
+                        <div class="thankyou-thumbsup">
+                            <svg width="40" height="40" viewBox="0 0 155.123 155.123" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M150.669,84.068c7.858-7.823,5.43-23.647-8.181-23.647l-35.813,0.024
+                                    c1.36-7.584,3.33-20.156,3.252-21.343c-0.752-11.242-7.918-24.924-8.228-25.484c-1.307-2.434-7.906-5.734-14.547-4.32
+                                    c-8.586,1.838-9.463,7.315-9.428,8.825c0,0,0.37,14.983,0.406,18.981c-4.105,9.016-18.259,32.71-22.549,34.536
+                                    c-1.026-0.621-2.19-0.955-3.401-0.955H6.934C3.091,70.685,0,73.793,0,77.618l0.006,62.533c0.269,3.371,3.133,6.015,6.516,6.015
+                                    h40.64c3.604,0,6.534-2.93,6.534-6.534v-2.076c0,0,1.51-0.113,2.196,0.328c2.613,1.659,5.842,3.747,10.054,3.747h60.647
+                                    c22.674,0,20.24-20.126,18.169-22.871c3.831-4.171,6.2-11.528,2.966-17.34C150.21,98.789,154.578,91.557,150.669,84.068z
+                                     M45.766,139.62H6.51V77.212h39.256V139.62z M140.09,83.531l-0.37,1.545c10.448,2.971,4.887,15.013-2.608,15.794l-0.37,1.545
+                                    c10.018,2.548,5.239,14.947-2.608,15.794l-0.37,1.539c8.181,1.343,6.2,15.305-6.194,15.305l-61.686,0.024
+                                    c-4.356,0-8.324-4.964-11.528-4.964H51.56V82.075c3.485-2.16,7.769-4.964,10.15-6.987c4.499-3.837,22.913-33.593,22.913-37.317
+                                    s-0.406-19.834-0.406-19.834s3.61-4.654,11.671-1.259c0,0,6.784,12.721,7.476,22.859c0,0-3.055,20.884-4.696,27.436h42.765
+                                    C151.94,66.985,149.935,81.986,140.09,83.531z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    
+                    <!-- Bottom Row: Follow Button (left) + LET'S CONNECT (right) -->
+                    <div class="thankyou-row-bottom">
+                        <!-- Follow Button - Left Side -->
+                        <a href="#contact" class="thankyou-follow-btn">
+                            <span>Follow</span>
+                            <span class="follow-plus">+</span>
+                        </a>
+                        
+                        <!-- LET'S CONNECT - Right Side -->
+                        <h2 class="thankyou-heading-bottom">LET'S CONNECT</h2>
+                    </div>
+                </div>
+
+                <!-- Contact Card -->
+                <div class="thankyou-card">
+                    <h3 class="thankyou-card-heading">Have an awesome project idea? <span class="highlight">Let's discuss</span></h3>
+                    
+                    <!-- Email Form -->
+                    <form class="contact-form thankyou-form" id="thankyouContactForm">
+                        <div class="email-input-wrapper">
+                            <svg class="email-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            <input type="email" id="thankyouEmailInput" placeholder="contact@abidiahmed.om" class="email-input" required>
+                            <button type="submit" id="thankyouSendBtn" class="send-btn">Send</button>
+                        </div>
+                        <div id="recaptcha-thankyou" style="margin-top: 20px; display: flex; justify-content: center;"></div>
+                    </form>
+                    
+                    <!-- Contact Info -->
+                    <div class="thankyou-contact-info">
+                        <a href="tel:+21627065061" class="thankyou-contact-link">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                                <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm6.105 17.894c-.25.705-.946 1.452-1.6 1.643-.445.13-1.024.233-2.974-.638-2.496-1.114-4.102-3.645-4.225-3.814-.123-.168-1.006-1.338-1.006-2.552s.637-1.81.863-2.058c.226-.248.493-.31.658-.31l.474.009c.153.007.358-.058.56.426.206.495.7 1.706.762 1.83.062.124.103.268.02.433-.082.165-.124.268-.247.412-.124.144-.26.322-.371.432-.124.124-.252.26-.108.506.144.247.64 1.055 1.374 1.71.943.843 1.738 1.104 1.984 1.228.247.124.39.103.535-.062.144-.165.619-.722.784-.97.165-.247.33-.206.556-.124.226.082 1.437.678 1.684.801.247.124.412.185.474.288.062.103.062.598-.188 1.304z"/>
+                            </svg>
+                            <span>+216 27065061</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/abidiahmedcom" target="_blank" rel="noopener noreferrer" class="thankyou-contact-link">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                            </svg>
+                            <span>@abidiahmedcom</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mobile Drawer Overlay -->
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+
+    <!-- Project Platform Popup -->
+    <div class="popup-overlay" id="projectPopupOverlay">
+        <div class="project-popup">
+            <button class="popup-close" id="popupClose">&times;</button>
+            <h3 class="popup-title">Choose Platform</h3>
+            <div class="popup-buttons">
+                <a href="#" id="btnWeb" class="popup-btn popup-btn-web" target="_blank" rel="noopener noreferrer">
+                    <i class="devicon-html5-plain colored"></i> Web
+                </a>
+                <a href="#" id="btnAndroid" class="popup-btn popup-btn-android" target="_blank" rel="noopener noreferrer">
+                    <i class="devicon-android-plain colored"></i> Android
+                </a>
+                <a href="#" id="btnIOS" class="popup-btn popup-btn-ios" target="_blank" rel="noopener noreferrer">
+                    <i class="devicon-apple-original"></i> iOS
+                </a>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

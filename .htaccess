@@ -1,0 +1,87 @@
+RewriteEngine On
+RewriteBase /
+
+# 0. Canonicalize URL (Enforce HTTPS and non-www)
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^www\. [NC]
+RewriteRule ^(.*)$ https://abidiahmed.com/$1 [L,R=301]
+
+# 1. Clean URL for CV PDF
+# Makes CV accessible at /Ahmed_Abidi_CV.pdf instead of /assets/pdf/Ahmed_Abidi_CV.pdf
+RewriteRule ^Ahmed_Abidi_CV\.pdf$ /assets/pdf/Ahmed_Abidi_CV.pdf [L]
+
+# 2. Remove index.html from URLs (External Redirect)
+# If a user requests /index.html or /folder/index.html, redirect to / or /folder/
+RewriteCond %{THE_REQUEST} ^GET\ .*/index\.html\ HTTP
+RewriteRule ^(.*)index\.html$ /$1 [R=301,L]
+
+# 3. Redirect projects.html to /projects/ (Migration)
+# Since we moved projects.html to projects/index.html
+RewriteRule ^projects\.html$ /projects/ [R=301,L]
+
+# 4. Remove .html extension from URL (External Redirect)
+# Example: /page.html -> /page
+RewriteCond %{THE_REQUEST} ^GET\ (.*)\.html\ HTTP
+RewriteRule ^(.*)\.html$ /$1 [R=301,L]
+
+# 5. Handle extensionless URLs (Internal Rewrite)
+# Example: /page -> serves /page.html
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*)$ $1.html [L]
+
+# 6. Browser Caching (Speed up repeat visits)
+<IfModule mod_expires.c>
+  ExpiresActive On
+
+  # Images
+  ExpiresByType image/jpg "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/x-icon "access plus 1 year"
+
+  # Video
+  ExpiresByType video/mp4 "access plus 1 year"
+  ExpiresByType video/mpeg "access plus 1 year"
+
+  # CSS, JavaScript
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType text/javascript "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType application/x-javascript "access plus 1 year"
+
+  # Fonts
+  ExpiresByType application/font-woff "access plus 1 year"
+  ExpiresByType application/font-woff2 "access plus 1 year"
+  ExpiresByType application/x-font-ttf "access plus 1 year"
+  ExpiresByType application/vnd.ms-fontobject "access plus 1 year"
+  ExpiresByType font/opentype "access plus 1 year"
+  ExpiresByType font/ttf "access plus 1 year"
+  ExpiresByType font/woff "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+
+  # PDF
+  ExpiresByType application/pdf "access plus 1 month"
+
+  # Default
+  ExpiresDefault "access plus 2 days"
+</IfModule>
+
+# 6.1 Explicit Cache-Control Headers (Modern Browsers)
+<IfModule mod_headers.c>
+  # HSTS (Strict-Transport-Security) - 1 year, include subdomains
+  Header set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+
+  <FilesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|js|css|swf|webp|svg|ttf|woff|woff2)$">
+    Header set Cache-Control "max-age=31536000, public"
+  </FilesMatch>
+</IfModule>
+
+# 7. Enable GZIP Compression
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/x-javascript application/json application/xml application/rss+xml
+  AddOutputFilterByType DEFLATE application/vnd.ms-fontobject application/x-font-ttf font/ttf font/opentype font/otf image/svg+xml
+</IfModule>
