@@ -537,3 +537,173 @@ if (filterButtons.length > 0 && filterableCards.length > 0) {
         });
     });
 }
+
+// ===== VPN Warning Popup =====
+const vpnPopupOverlay = document.getElementById('vpnPopupOverlay');
+const vpnPopupClose = document.getElementById('vpnPopupClose');
+const vpnContinueBtn = document.getElementById('vpnContinueBtn');
+const vpnCountdown = document.getElementById('vpnCountdown');
+const clientCards = document.querySelectorAll('.client-card');
+
+let vpnTimer;
+
+function openVpnPopup(url) {
+    if (vpnPopupOverlay && vpnContinueBtn) {
+        vpnContinueBtn.href = url;
+        vpnPopupOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+
+        // Countdown Logic
+        let secondsLeft = 5;
+        if (vpnCountdown) vpnCountdown.textContent = `Redirecting in ${secondsLeft}s...`;
+        
+        // Clear any existing timer
+        if (vpnTimer) clearInterval(vpnTimer);
+
+        vpnTimer = setInterval(() => {
+            secondsLeft--;
+            if (vpnCountdown) vpnCountdown.textContent = `Redirecting in ${secondsLeft}s...`;
+
+            if (secondsLeft <= 0) {
+                clearInterval(vpnTimer);
+                // Trigger click on the button to handle the redirect (preserves target="_blank")
+                vpnContinueBtn.click();
+            }
+        }, 1000);
+    }
+}
+
+function closeVpnPopup() {
+    if (vpnPopupOverlay) {
+        vpnPopupOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+        // Stop timer when closed
+        if (vpnTimer) clearInterval(vpnTimer);
+    }
+}
+
+if (vpnPopupClose) {
+    vpnPopupClose.addEventListener('click', closeVpnPopup);
+}
+
+if (vpnPopupOverlay) {
+    vpnPopupOverlay.addEventListener('click', (e) => {
+        if (e.target === vpnPopupOverlay) {
+            closeVpnPopup();
+        }
+    });
+}
+
+// Attach listeners to client cards
+if (clientCards.length > 0) {
+    clientCards.forEach(card => {
+        card.addEventListener('click', (e) => {
+            e.preventDefault();
+            const url = card.getAttribute('href');
+            if (url) {
+                openVpnPopup(url);
+            }
+        });
+    });
+}
+
+if (vpnContinueBtn) {
+    vpnContinueBtn.addEventListener('click', () => {
+        // Wait a bit then close, since new tab opens
+        setTimeout(closeVpnPopup, 500);
+    });
+}
+
+// ===== Client Card Hover Preview =====
+(function() {
+    // Don't initialize on mobile devices
+    const isMobile = () => window.innerWidth <= 768;
+    if (isMobile()) return;
+    
+    // Create the preview tooltip element
+    const previewTooltip = document.createElement('div');
+    previewTooltip.className = 'client-preview-tooltip';
+    previewTooltip.innerHTML = '<img src="" alt="Website Preview">';
+    document.body.appendChild(previewTooltip);
+    
+    const previewImage = previewTooltip.querySelector('img');
+    const previewCards = document.querySelectorAll('.client-card[data-preview]');
+    
+    let isVisible = false;
+    let currentCard = null;
+    
+    // Preload images for smoother experience
+    previewCards.forEach(card => {
+        const previewSrc = card.getAttribute('data-preview');
+        if (previewSrc) {
+            const img = new Image();
+            img.src = previewSrc;
+        }
+    });
+    
+    previewCards.forEach(card => {
+        card.addEventListener('mouseenter', function(e) {
+            const previewSrc = this.getAttribute('data-preview');
+            if (!previewSrc) return;
+            
+            currentCard = this;
+            previewImage.src = previewSrc;
+            
+            // Position the tooltip
+            updateTooltipPosition(e);
+            
+            // Show the tooltip with a small delay for smoothness
+            setTimeout(() => {
+                if (currentCard === this) {
+                    previewTooltip.classList.add('visible');
+                    isVisible = true;
+                }
+            }, 100);
+        });
+        
+        card.addEventListener('mousemove', function(e) {
+            if (isVisible) {
+                updateTooltipPosition(e);
+            }
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            previewTooltip.classList.remove('visible');
+            isVisible = false;
+            currentCard = null;
+        });
+    });
+    
+    function updateTooltipPosition(e) {
+        const offsetX = 20;
+        const offsetY = 20;
+        const tooltipWidth = 200;
+        const tooltipHeight = previewTooltip.offsetHeight || 200;
+        
+        let x = e.clientX + offsetX;
+        let y = e.clientY + offsetY;
+        
+        // Prevent tooltip from going off-screen (right)
+        if (x + tooltipWidth > window.innerWidth - 20) {
+            x = e.clientX - tooltipWidth - offsetX;
+        }
+        
+        // Prevent tooltip from going off-screen (bottom)
+        if (y + tooltipHeight > window.innerHeight - 20) {
+            y = e.clientY - tooltipHeight - offsetY;
+        }
+        
+        // Prevent tooltip from going off-screen (left)
+        if (x < 20) {
+            x = 20;
+        }
+        
+        // Prevent tooltip from going off-screen (top)
+        if (y < 20) {
+            y = 20;
+        }
+        
+        previewTooltip.style.left = x + 'px';
+        previewTooltip.style.top = y + 'px';
+    }
+})();
