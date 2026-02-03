@@ -13,27 +13,33 @@ RewriteRule ^(.*)$ https://abidiahmed.com/$1 [L,R=301]
 # Makes CV accessible at /Ahmed_Abidi_CV.pdf instead of /assets/pdf/Ahmed_Abidi_CV.pdf
 RewriteRule ^Ahmed_Abidi_CV\.pdf$ /assets/pdf/Ahmed_Abidi_CV.pdf [L]
 
-# 2. Remove index.html from URLs (External Redirect)
+# 2. Redirect .php requests to proper URLs (Fix for old/incorrect links)
+# Redirect index.php to root
+RewriteRule ^index\.php$ / [R=301,L]
+# Redirect any other .php file to its equivalent path without extension
+RewriteRule ^(.*)\.php$ /$1 [R=301,L]
+
+# 3. Remove index.html from URLs (External Redirect)
 # If a user requests /index.html or /folder/index.html, redirect to / or /folder/
 RewriteCond %{THE_REQUEST} ^GET\ .*/index\.html\ HTTP
 RewriteRule ^(.*)index\.html$ /$1 [R=301,L]
 
-# 3. Redirect projects.html to /projects/ (Migration)
+# 4. Redirect projects.html to /projects/ (Migration)
 # Since we moved projects.html to projects/index.html
 RewriteRule ^projects\.html$ /projects/ [R=301,L]
 
-# 4. Remove .html extension from URL (External Redirect)
+# 5. Remove .html extension from URL (External Redirect)
 # Example: /page.html -> /page
 RewriteCond %{THE_REQUEST} ^GET\ (.*)\.html\ HTTP
 RewriteRule ^(.*)\.html$ /$1 [R=301,L]
 
-# 5. Handle extensionless URLs (Internal Rewrite)
+# 6. Handle extensionless URLs (Internal Rewrite)
 # Example: /page -> serves /page.html
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^(.*)$ $1.html [L]
 
-# 6. Browser Caching (Speed up repeat visits)
+# 7. Browser Caching (Speed up repeat visits)
 <IfModule mod_expires.c>
   ExpiresActive On
 
@@ -73,7 +79,7 @@ RewriteRule ^(.*)$ $1.html [L]
   ExpiresDefault "access plus 2 days"
 </IfModule>
 
-# 6.1 Explicit Cache-Control Headers (Modern Browsers)
+# 7.1 Explicit Cache-Control Headers (Modern Browsers)
 <IfModule mod_headers.c>
   # HSTS (Strict-Transport-Security) - 1 year, include subdomains
   Header set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
@@ -83,7 +89,7 @@ RewriteRule ^(.*)$ $1.html [L]
   </FilesMatch>
 </IfModule>
 
-# 7. Enable GZIP Compression
+# 8. Enable GZIP Compression
 <IfModule mod_deflate.c>
   AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/x-javascript application/json application/xml application/rss+xml
   AddOutputFilterByType DEFLATE application/vnd.ms-fontobject application/x-font-ttf font/ttf font/opentype font/otf image/svg+xml
