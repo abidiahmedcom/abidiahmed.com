@@ -1,33 +1,100 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <!-- Homepage -->
     <url>
         <loc>https://abidiahmed.com/</loc>
+        <lastmod>2026-02-03</lastmod>
         <priority>1.0</priority>
         <changefreq>weekly</changefreq>
     </url>
+    
+    <!-- Projects Listing -->
     <url>
         <loc>https://abidiahmed.com/projects/</loc>
+        <lastmod>2026-02-03</lastmod>
         <priority>0.9</priority>
         <changefreq>weekly</changefreq>
     </url>
+    
+    <!-- ChartAI Project -->
     <url>
-        <loc>https://abidiahmed.com/projects/ChartAI/</loc>
+        <loc>https://abidiahmed.com/projects/ChartAI/</loc> q
+        <lastmod>2026-02-03</lastmod>
         <priority>0.8</priority>
         <changefreq>monthly</changefreq>
     </url>
+    <url>
+        <loc>https://abidiahmed.com/projects/ChartAI/privacy</loc>
+        <lastmod>2026-02-03</lastmod>
+        <priority>0.3</priority>
+        <changefreq>yearly</changefreq>
+    </url>
+    <url>
+        <loc>https://abidiahmed.com/projects/ChartAI/terms</loc>
+        <lastmod>2026-02-03</lastmod>
+        <priority>0.3</priority>
+        <changefreq>yearly</changefreq>
+    </url>
+    
+    <!-- CTF Events Project -->
     <url>
         <loc>https://abidiahmed.com/projects/ctf-events/</loc>
+        <lastmod>2026-02-03</lastmod>
         <priority>0.8</priority>
         <changefreq>monthly</changefreq>
     </url>
+    <url>
+        <loc>https://abidiahmed.com/projects/ctf-events/privacy</loc>
+        <lastmod>2026-02-03</lastmod>
+        <priority>0.3</priority>
+        <changefreq>yearly</changefreq>
+    </url>
+    <url>
+        <loc>https://abidiahmed.com/projects/ctf-events/terms</loc>
+        <lastmod>2026-02-03</lastmod>
+        <priority>0.3</priority>
+        <changefreq>yearly</changefreq>
+    </url>
+    
+    <!-- TN Bus Tickets Project -->
     <url>
         <loc>https://abidiahmed.com/projects/tnbustickets/</loc>
+        <lastmod>2026-02-03</lastmod>
         <priority>0.8</priority>
         <changefreq>monthly</changefreq>
     </url>
     <url>
+        <loc>https://abidiahmed.com/projects/tnbustickets/privacy-policy</loc>
+        <lastmod>2026-02-03</lastmod>
+        <priority>0.3</priority>
+        <changefreq>yearly</changefreq>
+    </url>
+    
+    <!-- Silent Growth Project -->
+    <url>
         <loc>https://abidiahmed.com/projects/silent-growth/</loc>
+        <lastmod>2026-02-03</lastmod>
         <priority>0.8</priority>
         <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://abidiahmed.com/projects/silent-growth/privacy</loc>
+        <lastmod>2026-02-03</lastmod>
+        <priority>0.3</priority>
+        <changefreq>yearly</changefreq>
+    </url>
+    <url>
+        <loc>https://abidiahmed.com/projects/silent-growth/terms</loc>
+        <lastmod>2026-02-03</lastmod>
+        <priority>0.3</priority>
+        <changefreq>yearly</changefreq>
+    </url>
+    
+    <!-- 404 Page -->
+    <url>
+        <loc>https://abidiahmed.com/404</loc>
+        <lastmod>2026-02-02</lastmod>
+        <priority>0.1</priority>
+        <changefreq>yearly</changefreq>
     </url>
 </urlset>
