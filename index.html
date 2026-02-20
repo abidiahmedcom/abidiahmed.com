@@ -31,7 +31,7 @@
     <link rel="preload" href="assets/fonts/TitanOne-Regular.ttf" as="font" type="font/ttf" crossorigin>
 
     <!-- Defer Main Script -->
-    <script src="script.js" defer></script>
+    <script src="script.min.js" defer></script>
 
 
     <!-- Schema.org JSON-LD -->
@@ -89,8 +89,7 @@
       ]
     }
     </script>
-    <style>
-@font-face {
+    <style>@font-face {
     font-family: 'Montserrat';
     src: url('assets/fonts/Montserrat-VariableFont_wght.ttf') format('truetype');
     font-weight: 100 900;
@@ -3135,9 +3134,7 @@ body {
         padding: 8px 16px;
         font-size: 0.85rem;
     }
-}
-
-    </style>
+}</style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- Defer Google Fonts -->
@@ -3371,16 +3368,16 @@ body {
             <div class="section-label">Projects</div>
             
             <div class="projects-header">
-                <img src="assets/icons/flash-icon.webp" alt="Decorative yellow flash icon" class="projects-deco projects-deco-left">
+                <img src="assets/icons/flash-icon.webp" alt="Decorative yellow flash icon" class="projects-deco projects-deco-left" loading="lazy">
                 
                 <div class="projects-title-wrapper">
                     <h2 class="projects-heading">Selected <span class="projects-highlight">Work</span></h2>
-                    <img src="assets/icons/crown-icon.webp" alt="Gold crown icon" width="38" class="projects-crown">
+                    <img src="assets/icons/crown-icon.webp" alt="Gold crown icon" width="38" class="projects-crown" loading="lazy">
                     <!-- Decorative Arrow -->
                     <p class="projects-subtitle">Here are a few projects I've loved working on.</p>
                 </div>
 
-                <img src="assets/icons/flash-icon.webp" alt="Decorative yellow flash icon" class="projects-deco projects-deco-right">
+                <img src="assets/icons/flash-icon.webp" alt="Decorative yellow flash icon" class="projects-deco projects-deco-right" loading="lazy">
             </div>
             
             <!-- Projects Grid -->
@@ -3691,7 +3688,7 @@ body {
             <!-- Header with Label and Lightning Bolts -->
             <div class="testimonials-header">
                 <!-- Lightning Bolt Left -->
-                <img src="assets/icons/flash-icon.webp" alt="Decorative yellow flash icon" class="testimonial-deco testimonial-deco-left">
+                <img src="assets/icons/flash-icon.webp" alt="Decorative yellow flash icon" class="testimonial-deco testimonial-deco-left" loading="lazy">
                 
                 <!-- Testimonial Label -->
                 <div class="testimonial-label">
@@ -3700,7 +3697,7 @@ body {
                 </div>
                 
                 <!-- Lightning Bolt Right -->
-                <img src="assets/icons/flash-icon.webp" alt="Decorative yellow flash icon" class="testimonial-deco testimonial-deco-right">
+                <img src="assets/icons/flash-icon.webp" alt="Decorative yellow flash icon" class="testimonial-deco testimonial-deco-right" loading="lazy">
             </div>
 
             <!-- Title Section -->
@@ -3714,7 +3711,7 @@ body {
                 <!-- Client Image -->
                 <div class="testimonial-image-wrapper">
                     <div class="testimonial-image">
-                        <img src="assets/images/clients/david-client.webp" alt="David - Satisfied Client">
+                        <img src="assets/images/clients/david-client.webp" alt="David - Satisfied Client" loading="lazy">
                     </div>
                 </div>
 
@@ -3746,8 +3743,8 @@ body {
     <section class="contact-cta" id="contact">
         <div class="contact-cta-container">
             <!-- Decorative Lightning Bolts -->
-            <img src="assets/icons/flash-icon.webp" alt="Decorative yellow flash icon" class="contact-deco contact-deco-left">
-            <img src="assets/icons/flash-icon.webp" alt="Decorative yellow flash icon" class="contact-deco contact-deco-right">
+            <img src="assets/icons/flash-icon.webp" alt="Decorative yellow flash icon" class="contact-deco contact-deco-left" loading="lazy">
+            <img src="assets/icons/flash-icon.webp" alt="Decorative yellow flash icon" class="contact-deco contact-deco-right" loading="lazy">
 
             <!-- Contact Card -->
             <div class="contact-card">
@@ -3971,7 +3968,7 @@ body {
             <button class="popup-close" id="vpnPopupClose">&times;</button>
             <h3 class="popup-title">Regional Restrictions</h3>
             <p style="margin-bottom: 25px; color: var(--color-text-dark); line-height: 1.6;">
-                The client requires the website to be accessible only in specific regions. If the website does not open, please try using a VPN.
+                This website is accessible only in selected regions. If you are unable to access it, please use a VPN.
                 <br><br>
                 <span id="vpnCountdown" style="font-weight: 600; color: var(--color-accent); font-size: 0.9rem;">Redirecting in 5s...</span>
             </p>
